@@ -22,8 +22,9 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100svh] flex flex-col overflow-hidden text-paper pt-20"
-      aria-label="Hero"
+      id="top"
+      className="relative min-h-svh flex flex-col overflow-hidden text-paper pt-20"
+      aria-labelledby="hero-heading"
     >
       <motion.div
         style={{ y: videoY }}
@@ -45,23 +46,24 @@ export function Hero() {
       </motion.div>
 
       <div
-        className="absolute inset-0 z-[1] pointer-events-none"
+        className="absolute inset-0 z-1 pointer-events-none"
         style={{
           background:
             "radial-gradient(60% 60% at 50% 45%, rgba(20,58,108,0.55) 0%, rgba(20,58,108,0.85) 60%, rgba(15,40,80,0.97) 100%)",
         }}
       />
       <div
-        className="absolute inset-0 z-[1] pointer-events-none"
+        className="absolute inset-0 z-1 pointer-events-none"
         style={{
           background:
             "linear-gradient(180deg, rgba(11,28,50,0.55) 0%, rgba(11,28,50,0.35) 35%, rgba(11,28,50,0.85) 100%)",
         }}
       />
-      <div className="absolute inset-0 z-[2] grain pointer-events-none" />
+      <div className="absolute inset-0 z-2 grain pointer-events-none" />
 
-      <div className="wrap relative z-[3] flex-1 flex flex-col items-start justify-center text-left pb-16">
+      <div className="wrap relative z-3 flex-1 flex flex-col items-start justify-center text-left pb-16">
         <motion.h1
+          id="hero-heading"
           style={{ y: titleY, opacity: titleOpacity }}
           className="heading-display max-w-none sm:max-w-[18ch]"
         >
@@ -103,7 +105,7 @@ export function Hero() {
 
       </div>
 
-      <div className="relative z-[3] border-y border-paper/15 bg-navy/55 backdrop-blur-sm overflow-hidden py-3 sm:py-3.5">
+      <div className="relative z-3 border-y border-paper/15 bg-navy/55 backdrop-blur-sm overflow-hidden py-3 sm:py-3.5" aria-label="Xizmatlar marquee">
         <div className="marquee-track">
           {[...marquee, ...marquee, ...marquee].map((m, i) => (
             <span

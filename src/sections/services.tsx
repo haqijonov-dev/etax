@@ -12,7 +12,11 @@ export function Services() {
   const items = t.raw("items") as Item[];
 
   return (
-    <section id="services" className="py-16 sm:py-24 lg:py-36">
+    <section
+      id="services"
+      aria-labelledby="services-heading"
+      className="py-16 sm:py-24 lg:py-36"
+    >
       <div className="wrap">
         <div className="mb-12 sm:mb-20 lg:mb-32">
           <motion.span
@@ -25,6 +29,7 @@ export function Services() {
             {t("eyebrow")}
           </motion.span>
           <motion.h2
+            id="services-heading"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}

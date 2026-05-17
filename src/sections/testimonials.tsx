@@ -16,6 +16,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
+      aria-labelledby="testimonials-heading"
       className="py-16 sm:py-24 lg:py-36 bg-cream relative overflow-hidden"
     >
       <div
@@ -35,6 +36,7 @@ export function Testimonials() {
             {t("eyebrow")}
           </motion.span>
           <motion.h2
+            id="testimonials-heading"
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}

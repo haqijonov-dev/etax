@@ -14,6 +14,7 @@ export function Cta() {
   return (
     <section
       id="contact"
+      aria-labelledby="contact-heading"
       className="py-16 sm:py-24 lg:py-36 bg-navy text-paper relative overflow-hidden"
     >
       <div
@@ -49,6 +50,7 @@ export function Cta() {
             </motion.div>
 
             <motion.h2
+              id="contact-heading"
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}

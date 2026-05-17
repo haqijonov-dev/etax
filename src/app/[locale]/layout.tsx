@@ -9,6 +9,7 @@ import {
 import { routing, type Locale } from "@/i18n/routing";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { RevealObserver } from "@/components/reveal-observer";
+import { HtmlLang } from "@/components/html-lang";
 
 function isValidLocale(value: string): value is Locale {
   return (routing.locales as readonly string[]).includes(value);
@@ -79,11 +80,21 @@ export async function generateMetadata({
       },
     },
     verification: {
-      google: "",
-      yandex: "",
+      google: process.env.GOOGLE_SITE_VERIFICATION,
+      yandex: process.env.YANDEX_VERIFICATION,
+      other: process.env.BING_VERIFICATION
+        ? { "msvalidate.01": process.env.BING_VERIFICATION }
+        : undefined,
     },
     other: {
       "format-detection": "telephone=no",
+      "geo.region": "UZ-FA",
+      "geo.placename": locale === "ru" ? "Фергана" : "Farg'ona",
+      "geo.position": "40.3864;71.7864",
+      ICBM: "40.3864, 71.7864",
+      "revisit-after": "7 days",
+      rating: "general",
+      distribution: "global",
     },
   };
 }
@@ -103,6 +114,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <HtmlLang locale={locale} />
       <SmoothScroll />
       <RevealObserver />
       {children}
