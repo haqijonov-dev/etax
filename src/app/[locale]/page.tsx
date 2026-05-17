@@ -50,7 +50,7 @@ export default async function HomePage({ params }: { params: Params }) {
             address: {
               "@type": "PostalAddress",
               streetAddress: "Amir Temur 107A, 4-qavat",
-              addressLocality: "Toshkent",
+              addressLocality: "Farg'ona",
               addressCountry: "UZ",
             },
             areaServed: "UZ",

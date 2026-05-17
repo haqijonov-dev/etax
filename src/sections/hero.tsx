@@ -63,7 +63,7 @@ export function Hero() {
       <div className="wrap relative z-[3] flex-1 flex flex-col items-start justify-center text-left pb-16">
         <motion.h1
           style={{ y: titleY, opacity: titleOpacity }}
-          className="h-display max-w-[18ch]"
+          className="heading-display max-w-none sm:max-w-[18ch]"
         >
           <SplitWord delay={0.15}>{t("headlinePre")}</SplitWord>{" "}
           <SplitWord delay={0.35} accent>
@@ -90,25 +90,25 @@ export function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85, ease: [0.2, 0.7, 0.2, 1] }}
-          className="mt-9 flex flex-row flex-wrap gap-3"
+          className="mt-7 sm:mt-9 flex flex-col sm:flex-row flex-wrap gap-3 w-full sm:w-auto"
         >
-          <a className="btn btn-primary" href="#contact">
+          <a className="btn btn-primary w-full sm:w-auto" href="#contact">
             <span>{t("ctaPrimary")}</span>
             <ArrowRight size={14} weight="bold" />
           </a>
-          <a className="btn btn-secondary" href="#services">
+          <a className="btn btn-secondary w-full sm:w-auto" href="#services">
             <span>{t("ctaGhost")}</span>
           </a>
         </motion.div>
 
       </div>
 
-      <div className="relative z-[3] border-y border-paper/15 bg-navy/55 backdrop-blur-sm overflow-hidden py-3.5">
+      <div className="relative z-[3] border-y border-paper/15 bg-navy/55 backdrop-blur-sm overflow-hidden py-3 sm:py-3.5">
         <div className="marquee-track">
           {[...marquee, ...marquee, ...marquee].map((m, i) => (
             <span
               key={i}
-              className="text-[20px] sm:text-[22px] font-medium tracking-tight text-paper/65 inline-flex items-center gap-[60px] whitespace-nowrap"
+              className="text-[15px] sm:text-[18px] lg:text-[22px] font-medium tracking-tight text-paper/65 inline-flex items-center gap-[32px] sm:gap-[48px] lg:gap-[60px] whitespace-nowrap"
             >
               {m}
               <span className="text-primary text-xs">✦</span>

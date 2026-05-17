@@ -12,9 +12,9 @@ export function Services() {
   const items = t.raw("items") as Item[];
 
   return (
-    <section id="services" className="py-20 sm:py-28 lg:py-36">
+    <section id="services" className="py-16 sm:py-24 lg:py-36">
       <div className="wrap">
-        <div className="mb-20 sm:mb-28 lg:mb-32">
+        <div className="mb-12 sm:mb-20 lg:mb-32">
           <motion.span
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -29,16 +29,15 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
-            className="h-1 mt-5 pb-2"
+            className="heading-1 mt-5 pb-2 max-w-[20ch] sm:max-w-none"
           >
             {t("titlePre")}
             <span className="accent">{t("titleEm")}</span>
-            <br />
-            {t("titlePost").trimStart()}
+            {t("titlePost")}
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-line">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it, i) => (
             <ServiceCard
               key={it.n}
@@ -109,25 +108,25 @@ function ServiceCard({
         delay: (index % 3) * 0.08,
         ease: [0.2, 0.7, 0.2, 1],
       }}
-      className={`group relative bg-paper p-8 sm:p-9 min-h-[330px] flex flex-col overflow-hidden transition-colors duration-500 hover:bg-navy hover:text-paper ${borderCls}`}
+      className={`group relative bg-paper p-6 sm:p-8 lg:p-9 min-h-[280px] sm:min-h-[330px] flex flex-col overflow-hidden transition-colors duration-500 hover:bg-navy hover:text-paper ${borderCls}`}
     >
-      <div className="flex items-start justify-between mb-6">
-        <span className="text-2xl font-semibold text-primary-deep tracking-tight group-hover:text-primary transition-colors">
+      <div className="flex items-start justify-between mb-5 sm:mb-6">
+        <span className="text-xl sm:text-2xl font-semibold text-primary-deep tracking-tight group-hover:text-primary transition-colors">
           — {item.n}
         </span>
         <span className="opacity-60 group-hover:opacity-100 transition">
-          <Icon name={item.icon} size={28} weight="duotone" className="text-primary-deep group-hover:text-primary" />
+          <Icon name={item.icon} size={26} weight="duotone" className="text-primary-deep group-hover:text-primary" />
         </span>
       </div>
-      <h3 className="text-2xl sm:text-[26px] font-semibold tracking-tight leading-tight mb-3">
+      <h3 className="text-[20px] sm:text-2xl lg:text-[26px] font-semibold tracking-tight leading-tight mb-3">
         {item.t}
       </h3>
-      <p className="text-sm text-ink-2 group-hover:text-paper/70 transition-colors leading-relaxed flex-1">
+      <p className="text-[14px] sm:text-sm text-ink-2 group-hover:text-paper/70 transition-colors leading-relaxed flex-1">
         {item.d}
       </p>
       <a
         href="#contact"
-        className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold group/link"
+        className="mt-5 sm:mt-6 inline-flex items-center gap-2 text-[13px] font-semibold group/link"
       >
         <span>{more}</span>
         <ArrowUpRight

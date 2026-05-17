@@ -2,7 +2,7 @@
   "meta": {
     "title": "Etax — Sanoat uchun moliyaviy konsalting",
     "description": "Etax — ishlab chiqarish, qurilish va texnologiya korxonalari uchun moliyaviy konsalting agentligi. Soliq optimizatsiyasi, byudjetlash va boshqaruv hisoboti bo'yicha 12+ yillik tajriba.",
-    "keywords": "moliyaviy konsalting, soliq optimizatsiyasi, IFRS, MSFO, CFO outsourcing, byudjetlash, Toshkent, O'zbekiston"
+    "keywords": "moliyaviy konsalting, soliq optimizatsiyasi, IFRS, MSFO, CFO outsourcing, byudjetlash, Farg'ona, O'zbekiston"
   },
   "nav": {
     "links": {
@@ -15,7 +15,7 @@
     "cta": "Konsultatsiya"
   },
   "hero": {
-    "eyebrow": "Toshkent · Moliyaviy konsalting",
+    "eyebrow": "Farg'ona · Moliyaviy konsalting",
     "who": "Ishlab chiqarish, qurilish va texnologiya kompaniyalari uchun",
     "headlinePre": "Raqamlar ortidagi",
     "headlineEm": "strategiya",
@@ -42,7 +42,7 @@
     "eyebrow": "01 — Xizmatlar",
     "titlePre": "Moliyaviy ",
     "titleEm": "aniqlik",
-    "titlePost": " uchun to'liq xizmatlar paketi",
+    "titlePost": " uchun xizmatlar",
     "lead": "Har bir xizmat — alohida loyiha emas, balki sizning korxonangiz o'sishini ta'minlovchi tizimning bo'lagi.",
     "more": "Batafsil",
     "items": [
@@ -56,28 +56,28 @@
   },
   "about": {
     "eyebrow": "02 — Biz haqimizda",
-    "titleP1": "Biz ",
-    "titleE1": "hisobchi",
-    "titleP2": " emas, biz ",
-    "titleE2": "sizning moliyaviy hamkoringizmiz",
-    "lead": "12 yil ichida 320 dan ortiq korxona bilan ishladik — ishlab chiqarishdan SaaS gacha. Har bir loyihada bir narsa o'zgarmas: raqamlar ortida real qaror turishi kerak.",
+    "titleP1": "Hisobchi emas — ",
+    "titleE1": "moliyaviy",
+    "titleP2": " hamkor",
+    "titleE2": "",
     "list": [
       { "icon": "Buildings", "t": "Sanoatga xos tajriba", "d": "Ishlab chiqarish, qurilish va texnologiya — biz ushbu sohalarning ichki iqtisodini bilamiz." },
       { "icon": "UsersThree", "t": "Bitta SPOC, butun jamoa", "d": "Sizda bitta yetakchi konsultant bo'ladi, lekin uning ortida 24 kishilik jamoa ishlaydi." },
       { "icon": "Handshake", "t": "Shaffof retainer", "d": "Soatbay emas, oylik fiks. Hech qanday yashirin xarajatlar." },
       { "icon": "GlobeHemisphereEast", "t": "Mahalliy + xalqaro", "d": "O'zbekiston qonunchiligini chuqur bilamiz, IFRS va Big Four metodologiyasini qo'llaymiz." }
     ],
-    "floatNum": "A+",
-    "floatTitle": "Mijoz reytingi",
-    "floatSub": "320+ mijoz, 2024 anketasi",
-    "placeholder": "JAMOA SURATI · 4:5"
+    "stats": [
+      { "v": "12+", "l": "Yil tajriba" },
+      { "v": "320+", "l": "Faol mijoz" },
+      { "v": "24", "l": "Mutaxassis" },
+      { "v": "A+", "l": "Mijoz reytingi" }
+    ]
   },
   "process": {
     "eyebrow": "03 — Qanday ishlaymiz",
     "titlePre": "To'rt qadamlik, ",
     "titleEm": "shaffof",
     "titlePost": " jarayon",
-    "lead": "Birinchi qo'ng'iroqdan to oylik hisobotgacha — har bir bosqich oldindan kelishilgan va o'lchanadigan.",
     "steps": [
       { "n": "01", "t": "Tanishuv", "d": "60 daqiqalik bepul qo'ng'iroq. Sizning biznesingizni, raqamlaringizni va og'riq nuqtalarini eshitamiz." },
       { "n": "02", "t": "Audit", "d": "Mavjud hisob, soliq va boshqaruv tizimini chuqur tahlil. 10–14 ish kuni." },
@@ -90,7 +90,7 @@
     "titlePre": "Bizga ishongan ",
     "titleEm": "rahbarlar",
     "items": [
-      { "q": "Etax bilan ishlagan birinchi yilimizda soliq xarajatlarimiz 22% ga kamaydi va kredit liniyamizni oshirishga muvaffaq bo'ldik.", "a": "B", "n": "Bekzod Karimov", "r": "Bosh moliyaviy direktor · Toshkent Metall LLC" },
+      { "q": "Etax bilan ishlagan birinchi yilimizda soliq xarajatlarimiz 22% ga kamaydi va kredit liniyamizni oshirishga muvaffaq bo'ldik.", "a": "B", "n": "Bekzod Karimov", "r": "Bosh moliyaviy direktor · Farg'ona Metall LLC" },
       { "q": "Boshqaruv hisoboti birinchi marta haqiqiy raqamlarni ko'rsata boshladi. Direktorlar kengashi qarorlari endi tuyg'uga emas, dalilga asoslangan.", "a": "D", "n": "Dilnoza Yusupova", "r": "Asoschi · Granite Build Group" },
       { "q": "M&A jarayonida ularning due diligence komandasi bizning savdomizni 6 oyga tezlashtirdi va xaridor narxini 1.4M$ ga ko'tarishga yordam berdi.", "a": "S", "n": "Sherzod Aliyev", "r": "CEO · Lumen Tech Uzbekistan" },
       { "q": "IFRS o'tish loyihamiz aniq belgilangan muddatda, byudjetdan oshmasdan tugadi. Audit komandamiz birinchi marta yashil chiroq berdi.", "a": "M", "n": "Madina Inomova", "r": "Bosh hisobchi · KIPRO Industries" }
@@ -120,16 +120,16 @@
     "channels": [
       { "label": "Telefon", "val": "+998 71 200 14 88", "icon": "Phone" },
       { "label": "Pochta", "val": "hello@etax.uz", "icon": "EnvelopeSimple" },
-      { "label": "Manzil", "val": "Toshkent, Amir Temur 107A", "icon": "MapPin" }
+      { "label": "Manzil", "val": "Farg'ona, Amir Temur 107A", "icon": "MapPin" }
     ]
   },
   "footer": {
-    "address": "Toshkent shahar, Mirobod tumani, Amir Temur ko'chasi 107A, 4-qavat",
+    "address": "Farg'ona shahri, Amir Temur ko'chasi 107A, 4-qavat",
     "addressHeading": "Manzil",
     "groups": [
       { "h": "Xizmatlar", "items": ["Soliq optimizatsiyasi", "Boshqaruv hisoboti", "Byudjetlash", "IFRS o'tish", "CFO outsourcing"] },
       { "h": "Kompaniya", "items": ["Biz haqimizda", "Jamoa", "Karera", "Yangiliklar"] },
-      { "h": "Aloqa", "items": ["Toshkent ofisi", "Samarqand ofisi", "hello@etax.uz", "+998 71 200 14 88"] }
+      { "h": "Aloqa", "items": ["Farg'ona ofisi", "Samarqand ofisi", "hello@etax.uz", "+998 71 200 14 88"] }
     ],
     "copy": "© 2026 Etax LLC — Litsenziya: AT-21438",
     "legal": ["Maxfiylik siyosati", "Foydalanish shartlari"]

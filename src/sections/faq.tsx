@@ -13,9 +13,9 @@ export function Faq() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faq" className="py-20 sm:py-28 lg:py-36 bg-cream">
+    <section id="faq" className="py-16 sm:py-24 lg:py-36">
       <div className="wrap">
-        <div className="mb-12 sm:mb-16">
+        <div className="mb-10 sm:mb-14 lg:mb-16">
           <motion.span
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export function Faq() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
-            className="h-1 mt-5"
+            className="heading-1 mt-5"
           >
             {t("titlePre")}
             <span className="accent">{t("titleEm")}</span>
@@ -53,22 +53,22 @@ export function Faq() {
                   type="button"
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
-                  className="w-full grid grid-cols-[auto_1fr_auto] sm:grid-cols-[64px_1fr_44px] items-center gap-4 sm:gap-6 py-6 sm:py-7 text-left"
+                  className="w-full grid grid-cols-[1fr_auto] sm:grid-cols-[64px_1fr_48px] items-center gap-4 sm:gap-6 py-5 sm:py-7 text-left"
                 >
                   <span className="hidden sm:inline text-primary-deep text-base tracking-wide">
                     — 0{i + 1}
                   </span>
-                  <span className="text-[20px] sm:text-[24px] lg:text-[28px] font-semibold tracking-tight leading-snug">
+                  <span className="text-[17px] sm:text-[24px] lg:text-[28px] font-semibold tracking-tight leading-snug pr-2">
                     {it.q}
                   </span>
                   <span
-                    className={`inline-flex w-9 h-9 items-center justify-center border transition-all ${
+                    className={`inline-flex w-11 h-11 sm:w-12 sm:h-12 shrink-0 items-center justify-center border transition-all duration-300 ${
                       isOpen
                         ? "bg-navy border-navy text-paper rotate-45"
-                        : "border-line text-ink"
+                        : "border-line text-ink hover:border-primary hover:text-primary-deep"
                     }`}
                   >
-                    <Plus size={16} weight="bold" />
+                    <Plus size={18} weight="bold" />
                   </span>
                 </button>
                 <AnimatePresence initial={false}>
@@ -81,9 +81,9 @@ export function Faq() {
                       transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="grid grid-cols-[auto_1fr] sm:grid-cols-[64px_1fr] gap-4 sm:gap-6 pb-7 sm:pb-8">
+                      <div className="grid grid-cols-1 sm:grid-cols-[64px_1fr] gap-4 sm:gap-6 pb-6 sm:pb-8">
                         <span className="hidden sm:block" />
-                        <p className="text-[15.5px] text-ink-2 max-w-[64ch] leading-relaxed">
+                        <p className="text-[14.5px] sm:text-[15.5px] text-ink-2 max-w-[64ch] leading-relaxed">
                           {it.a}
                         </p>
                       </div>
