@@ -28,7 +28,7 @@ export function Cta() {
         aria-hidden
         className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full opacity-25 blur-[80px] pointer-events-none"
         style={{
-          background: "radial-gradient(circle, #03AED2 0%, transparent 65%)",
+          background: "radial-gradient(circle, #228BE6 0%, transparent 65%)",
         }}
       />
 

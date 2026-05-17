@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #03aed2;
-  --color-primary-deep: #058aa8;
-  --color-primary-tint: #e6f8fc;
-  --color-navy: #0b2440;
-  --color-navy-2: #122e50;
+  --color-primary: #228be6;
+  --color-primary-deep: #1971c2;
+  --color-primary-tint: #e7f5ff;
+  --color-navy: #0c2a4d;
+  --color-navy-2: #143158;
   --color-ink: #0e1a2b;
   --color-ink-2: #2a3a50;
   --color-muted: #6a7689;
@@ -233,13 +233,13 @@
   /* Pulse dot */
   @keyframes pulseDot {
     0% {
-      box-shadow: 0 0 0 0 rgba(3, 174, 210, 0.6);
+      box-shadow: 0 0 0 0 rgba(34, 139, 230, 0.6);
     }
     70% {
-      box-shadow: 0 0 0 12px rgba(3, 174, 210, 0);
+      box-shadow: 0 0 0 12px rgba(34, 139, 230, 0);
     }
     100% {
-      box-shadow: 0 0 0 0 rgba(3, 174, 210, 0);
+      box-shadow: 0 0 0 0 rgba(34, 139, 230, 0);
     }
   }
   .pulse-dot {
