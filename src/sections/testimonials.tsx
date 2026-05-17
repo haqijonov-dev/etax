@@ -87,8 +87,8 @@ export function Testimonials() {
                       <span
                         className={`inline-flex w-11 h-11 sm:w-12 sm:h-12 lg:w-14 lg:h-14 shrink-0 items-center justify-center text-base sm:text-lg font-bold transition-all duration-500 ${
                           isActive
-                            ? "bg-primary text-navy"
-                            : "bg-navy text-paper group-hover:bg-primary group-hover:text-navy"
+                            ? "bg-primary text-paper"
+                            : "bg-navy text-paper group-hover:bg-primary group-hover:text-paper"
                         }`}
                       >
                         {it.a}
@@ -140,7 +140,7 @@ export function Testimonials() {
               className="absolute inset-0 opacity-[0.04] pointer-events-none"
               style={{
                 backgroundImage:
-                  "repeating-linear-gradient(135deg, rgba(12,42,77,0.7) 0 1px, transparent 1px 18px)",
+                  "repeating-linear-gradient(135deg, rgba(20,58,108,0.7) 0 1px, transparent 1px 18px)",
               }}
             />
 

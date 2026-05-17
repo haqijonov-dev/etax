@@ -22,7 +22,7 @@ const poppins = Poppins({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0C2A4D",
+  themeColor: "#143A6C",
   colorScheme: "light",
 };
 

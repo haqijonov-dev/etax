@@ -48,14 +48,14 @@ export function Hero() {
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background:
-            "radial-gradient(60% 60% at 50% 45%, rgba(12,42,77,0.55) 0%, rgba(12,42,77,0.85) 60%, rgba(8,28,55,0.97) 100%)",
+            "radial-gradient(60% 60% at 50% 45%, rgba(20,58,108,0.55) 0%, rgba(20,58,108,0.85) 60%, rgba(15,40,80,0.97) 100%)",
         }}
       />
       <div
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(7,18,34,0.55) 0%, rgba(7,18,34,0.35) 35%, rgba(7,18,34,0.85) 100%)",
+            "linear-gradient(180deg, rgba(11,28,50,0.55) 0%, rgba(11,28,50,0.35) 35%, rgba(11,28,50,0.85) 100%)",
         }}
       />
       <div className="absolute inset-0 z-[2] grain pointer-events-none" />

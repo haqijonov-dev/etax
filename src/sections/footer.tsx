@@ -19,7 +19,7 @@ export function Footer() {
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(135deg, rgba(12,42,77,0.7) 0 1px, transparent 1px 22px)",
+            "repeating-linear-gradient(135deg, rgba(20,58,108,0.7) 0 1px, transparent 1px 22px)",
         }}
       />
       <div
@@ -137,7 +137,7 @@ export function Footer() {
               <ArrowUp
                 size={14}
                 weight="bold"
-                className="text-navy group-hover:text-navy transition-all duration-500 group-hover:-translate-y-0.5"
+                className="text-navy group-hover:text-paper transition-all duration-500 group-hover:-translate-y-0.5"
               />
             </span>
           </a>
