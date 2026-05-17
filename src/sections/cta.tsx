@@ -136,7 +136,7 @@ export function Cta() {
                         name={c.icon}
                         size={20}
                         weight="duotone"
-                        className="text-primary group-hover:text-navy transition-colors duration-500"
+                        className="text-primary group-hover:text-paper transition-colors duration-500"
                       />
                     </span>
                     <div className="flex-1 min-w-0">

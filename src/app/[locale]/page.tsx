@@ -49,7 +49,7 @@ export default async function HomePage({ params }: { params: Params }) {
             description: t("description"),
             url: baseUrl,
             logo: `${baseUrl}/black-logo.png`,
-            image: `${baseUrl}/og-image.svg`,
+            image: `${baseUrl}/opengraph-image`,
             telephone: "+998712001488",
             email: "hello@taxservice.uz",
             priceRange: "$$",

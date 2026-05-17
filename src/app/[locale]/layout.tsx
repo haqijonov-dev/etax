@@ -32,7 +32,6 @@ export async function generateMetadata({
   const baseUrl = "https://taxservice.uz";
   const pageUrl =
     locale === routing.defaultLocale ? baseUrl : `${baseUrl}/${locale}`;
-  const ogImageUrl = `${baseUrl}/og-image.svg`;
 
   return {
     title: t("title"),
@@ -59,21 +58,11 @@ export async function generateMetadata({
       siteName: "Etax",
       locale: locale === "uz" ? "uz_UZ" : "ru_RU",
       alternateLocale: locale === "uz" ? ["ru_RU"] : ["uz_UZ"],
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-          type: "image/svg+xml",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [ogImageUrl],
       creator: "@taxserviceuz",
       site: "@taxserviceuz",
     },
