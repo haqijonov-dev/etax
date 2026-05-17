@@ -140,7 +140,7 @@ export function Testimonials() {
               className="absolute inset-0 opacity-[0.04] pointer-events-none"
               style={{
                 backgroundImage:
-                  "repeating-linear-gradient(135deg, rgba(11,36,64,0.7) 0 1px, transparent 1px 18px)",
+                  "repeating-linear-gradient(135deg, rgba(12,42,77,0.7) 0 1px, transparent 1px 18px)",
               }}
             />
 

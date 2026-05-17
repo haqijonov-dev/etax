@@ -22,17 +22,18 @@ const poppins = Poppins({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0B2440",
+  themeColor: "#0C2A4D",
   colorScheme: "light",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://etax.uz"),
+  metadataBase: new URL("https://taxservice.uz"),
   title: { default: "Etax", template: "%s · Etax" },
   description: "Financial consulting for industry.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   formatDetection: { telephone: false, email: false, address: false },
 };
