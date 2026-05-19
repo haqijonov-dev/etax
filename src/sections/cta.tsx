@@ -95,11 +95,11 @@ export function Cta() {
             </motion.div>
 
             <div className="mt-10 sm:mt-12 pt-5 sm:pt-6 border-t border-paper/15 flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-mono text-paper/55">
-              <span>60 min</span>
-              <span className="w-1 h-1 bg-paper/30 rounded-full" />
               <span>Bepul</span>
               <span className="w-1 h-1 bg-paper/30 rounded-full" />
-              <span>Online / Office</span>
+              <span>Telefon / Telegram</span>
+              <span className="w-1 h-1 bg-paper/30 rounded-full" />
+              <span>Farg'ona</span>
             </div>
           </div>
 

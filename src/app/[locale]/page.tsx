@@ -44,41 +44,31 @@ export default async function HomePage({ params }: { params: Params }) {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             "@id": `${baseUrl}#organization`,
-            name: "Etax",
+            name: "E-TAX",
             alternateName: "taxservice.uz",
             description: t("description"),
             url: baseUrl,
             logo: `${baseUrl}/black-logo.png`,
             image: `${baseUrl}/opengraph-image`,
-            telephone: "+998712001488",
-            email: "hello@taxservice.uz",
-            priceRange: "$$",
-            foundingDate: "2012",
+            telephone: "+998908498989",
+            priceRange: "500000 - 7000000 UZS",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Amir Temur 107A, 4-qavat",
               addressLocality: "Farg'ona",
               addressCountry: "UZ",
             },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: 40.3864,
-              longitude: 71.7864,
-            },
             areaServed: { "@type": "Country", name: "Uzbekistan" },
             serviceType: [
-              "Tax optimization",
-              "Management reporting",
-              "Budgeting",
-              "IFRS transition",
-              "CFO outsourcing",
-              "Due diligence",
+              "Accounting services",
+              "Tax reporting",
+              "VAT reporting",
+              "HR documentation",
+              "E-invoicing",
+              "Bank operations",
+              "Financial consulting",
+              "Company registration",
             ],
-            sameAs: [
-              "https://t.me/taxserviceuz",
-              "https://www.linkedin.com/company/taxserviceuz",
-              "https://www.instagram.com/taxserviceuz",
-            ],
+            sameAs: ["https://t.me/omad9999"],
           }),
         }}
       />
@@ -91,9 +81,14 @@ export default async function HomePage({ params }: { params: Params }) {
             "@type": "WebSite",
             "@id": `${baseUrl}#website`,
             url: baseUrl,
-            name: "TaxService",
+            name: "E-TAX",
             description: t("description"),
-            inLanguage: locale === "uz" ? "uz-UZ" : "ru-RU",
+            inLanguage:
+              locale === "ru"
+                ? "ru-RU"
+                : locale === "uz-cyrl"
+                  ? "uz-Cyrl-UZ"
+                  : "uz-Latn-UZ",
             publisher: { "@id": `${baseUrl}#organization` },
           }),
         }}

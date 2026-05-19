@@ -39,12 +39,12 @@ export function Footer() {
             <div className="flex items-center gap-3 mb-6 sm:mb-8">
               <span className="inline-block w-8 h-px bg-primary" />
               <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-primary-deep font-mono">
-                ★ Etax · est. 2012
+                ★ E-TAX · Farg'ona
               </span>
             </div>
             <Image
               src="/black-logo.png"
-              alt="Etax"
+              alt="E-TAX"
               width={800}
               height={240}
               className="h-14 sm:h-20 lg:h-32 w-auto"
