@@ -13,7 +13,11 @@ export function Faq() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faq" className="py-16 sm:py-24 lg:py-36">
+    <section
+      id="faq"
+      aria-labelledby="faq-heading"
+      className="py-16 sm:py-24 lg:py-36"
+    >
       <div className="wrap">
         <div className="mb-10 sm:mb-14 lg:mb-16">
           <motion.span
@@ -26,6 +30,7 @@ export function Faq() {
             {t("eyebrow")}
           </motion.span>
           <motion.h2
+            id="faq-heading"
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}

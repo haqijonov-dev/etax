@@ -5,7 +5,14 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Icon, type IconName } from "@/components/icon";
 
-type Channel = { label: string; val: string; icon: IconName };
+type Channel = { label: string; val: string; icon: IconName; href: string };
+
+const PHONE_HREF = "tel:+998908498989";
+const TELEGRAM_HREF = "https://t.me/omad9999";
+
+function isExternal(href: string) {
+  return href.startsWith("http");
+}
 
 export function Cta() {
   const t = useTranslations("cta");
@@ -14,6 +21,7 @@ export function Cta() {
   return (
     <section
       id="contact"
+      aria-labelledby="contact-heading"
       className="py-16 sm:py-24 lg:py-36 bg-navy text-paper relative overflow-hidden"
     >
       <div
@@ -49,6 +57,7 @@ export function Cta() {
             </motion.div>
 
             <motion.h2
+              id="contact-heading"
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -81,7 +90,7 @@ export function Cta() {
               transition={{ duration: 0.7, delay: 0.4 }}
               className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 w-full sm:w-auto"
             >
-              <a className="btn btn-primary group w-full sm:w-auto" href="#">
+              <a className="btn btn-primary group w-full sm:w-auto" href={PHONE_HREF}>
                 <span>{t("ctaPrimary")}</span>
                 <ArrowRight
                   size={14}
@@ -89,7 +98,12 @@ export function Cta() {
                   className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </a>
-              <a className="btn btn-secondary w-full sm:w-auto" href="#">
+              <a
+                className="btn btn-secondary w-full sm:w-auto"
+                href={TELEGRAM_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span>{t("ctaGhost")}</span>
               </a>
             </motion.div>
@@ -128,8 +142,10 @@ export function Cta() {
                   }}
                 >
                   <a
-                    href="#"
-                    className="group flex items-center gap-4 sm:gap-5 py-4 sm:py-5 lg:py-6 border-b border-paper/15 first:border-t first:border-paper/15 transition-all duration-500 hover:pl-3"
+                    href={c.href}
+                    target={isExternal(c.href) ? "_blank" : undefined}
+                    rel={isExternal(c.href) ? "noopener noreferrer" : undefined}
+                    className="group flex items-center gap-4 sm:gap-5 py-4 sm:py-5 lg:py-6 border-b border-paper/15 first:border-t first:border-paper/15 transition-all duration-500 hover:pl-3 outline-none focus:outline-none focus-visible:outline-none"
                   >
                     <span className="inline-flex w-11 h-11 sm:w-12 sm:h-12 shrink-0 border border-paper/20 items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">
                       <Icon

@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "E-TAX — Buxgalteriya va soliq xizmatlari",
-    "description": "E-TAX — biznesingiz uchun professional buxgalteriya va soliq xizmatlarini taqdim etuvchi jamoa. 200+ doimiy mijoz, 3–20 yillik tajriba, Farg'ona.",
-    "keywords": "buxgalteriya xizmati, soliq hisobotlari, NDS, foyda solig'i, HR hujjatlari, elektron hisob-faktura, konsalting, korxona ochish, Farg'ona, O'zbekiston"
+    "title": "E-tax — Buxgalteriya va soliq xizmatlari Farg'ona | MChJ, NDS",
+    "description": "E-tax — Farg'ona shahridagi professional buxgalteriya va soliq xizmati. MChJ, YaTT va kichik bizneslar uchun: hisobot, NDS, e-faktura, kadrlar (HR), bank, konsalting, korxona ochish. 200+ mijoz, 3–20 yil tajriba.",
+    "keywords": "buxgalteriya xizmati Farg'ona, buxgalter Farg'ona, soliq hisoboti, NDS hisoboti, NDS deklaratsiyasi, foyda solig'i, MChJ buxgalter, MChJ uchun buxgalter, YaTT buxgalter, YaTT uchun buxgalteriya, kichik biznes buxgalteriya, autsorsing buxgalter, onlayn buxgalter, buxgalter xizmati narxi, elektron hisob-faktura, e-faktura, faktura.uz, didox, kadrlar hujjatlari, HR hujjatlari, ish haqi hisobi, mehnat shartnomalari, bank operatsiyalari, soliq konsalting, korxona ochish, MChJ ochish, YaTT ochish, korxona yopish, MChJ likvidatsiya, korxona ro'yxatdan o'tkazish, soliq inspeksiyasi, soliq jarima, soliq optimizatsiyasi, buxgalteriya autsorsing, buxgalter Farg'ona shahri, buxgalter Toshkent, buxgalter O'zbekiston, taxservice.uz"
   },
   "nav": {
     "links": {
@@ -118,9 +118,9 @@
     "ctaPrimary": "Konsultatsiya olish",
     "ctaGhost": "Telegramda yozish",
     "channels": [
-      { "label": "Telefon", "val": "+998 90 849 8989", "icon": "Phone" },
-      { "label": "Telegram", "val": "@omad9999", "icon": "EnvelopeSimple" },
-      { "label": "Manzil", "val": "Farg'ona shahri", "icon": "MapPin" }
+      { "label": "Telefon", "val": "+998 90 849 8989", "icon": "Phone", "href": "tel:+998908498989" },
+      { "label": "Telegram", "val": "@omad9999", "icon": "TelegramLogo", "href": "https://t.me/omad9999" },
+      { "label": "Manzil", "val": "Farg'ona shahri, Samo sport majmuasi ro'parasi", "icon": "MapPin", "href": "https://www.google.com/maps/search/?api=1&query=Samo+sport+majmuasi+Farg%27ona" }
     ]
   },
   "footer": {
@@ -131,7 +131,6 @@
       { "h": "Kompaniya", "items": ["Biz haqimizda", "Xizmatlar", "Jarayon", "Mijozlar fikri"] },
       { "h": "Aloqa", "items": ["Farg'ona shahri", "+998 90 849 8989", "Telegram: @omad9999"] }
     ],
-    "copy": "© 2026 E-TAX · Farg'ona",
-    "legal": ["Maxfiylik siyosati", "Foydalanish shartlari"]
+    "copy": "© 2026 E-TAX · Farg'ona"
   }
 }

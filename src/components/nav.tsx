@@ -43,10 +43,10 @@ export function Nav({ initialDark = true }: { initialDark?: boolean }) {
         className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${headerCls}`}
       >
         <div className="wrap flex items-center justify-between gap-4 sm:gap-8 py-3 sm:py-3.5">
-          <a href="#" className="inline-flex items-center shrink-0" aria-label="E-TAX">
+          <a href="#" className="inline-flex items-center shrink-0" aria-label="E-tax — Buxgalteriya va soliq xizmatlari Farg'ona">
             <Image
               src={onDark ? "/white-logo.png" : "/black-logo.png"}
-              alt="E-TAX"
+              alt="E-tax buxgalteriya xizmati Farg'ona"
               width={400}
               height={120}
               priority

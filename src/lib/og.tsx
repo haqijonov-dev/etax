@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;
-export const OG_ALT = "E-TAX — Ishonchli buxgalteriya va soliq xizmatlari";
+export const OG_ALT = "E-tax — Buxgalteriya va soliq xizmatlari Farg'ona";
 export const OG_CONTENT_TYPE = "image/png";
 
 type Locale = "uz" | "uz-cyrl" | "ru";

@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { Icon, type IconName } from "@/components/icon";
 
 type Item = { n: string; t: string; d: string; icon: IconName };
@@ -12,7 +11,11 @@ export function Services() {
   const items = t.raw("items") as Item[];
 
   return (
-    <section id="services" className="py-16 sm:py-24 lg:py-36">
+    <section
+      id="services"
+      aria-labelledby="services-heading"
+      className="py-16 sm:py-24 lg:py-36"
+    >
       <div className="wrap">
         <div className="mb-12 sm:mb-20 lg:mb-32">
           <motion.span
@@ -25,6 +28,7 @@ export function Services() {
             {t("eyebrow")}
           </motion.span>
           <motion.h2
+            id="services-heading"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -42,7 +46,6 @@ export function Services() {
             <ServiceCard
               key={it.n}
               item={it}
-              more={t("more")}
               index={i}
               total={items.length}
             />
@@ -55,12 +58,10 @@ export function Services() {
 
 function ServiceCard({
   item,
-  more,
   index,
   total,
 }: {
   item: Item;
-  more: string;
   index: number;
   total: number;
 }) {
@@ -100,6 +101,9 @@ function ServiceCard({
 
   return (
     <motion.article
+      id={`service-${item.n}`}
+      itemScope
+      itemType="https://schema.org/Service"
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -118,23 +122,12 @@ function ServiceCard({
           <Icon name={item.icon} size={26} weight="duotone" className="text-primary-deep group-hover:text-primary" />
         </span>
       </div>
-      <h3 className="text-[20px] sm:text-2xl lg:text-[26px] font-semibold tracking-tight leading-tight mb-3">
+      <h3 itemProp="name" className="text-[20px] sm:text-2xl lg:text-[26px] font-semibold tracking-tight leading-tight mb-3">
         {item.t}
       </h3>
-      <p className="text-[14px] sm:text-sm text-ink-2 group-hover:text-paper/70 transition-colors leading-relaxed flex-1">
+      <p itemProp="description" className="text-[14px] sm:text-sm text-ink-2 group-hover:text-paper/70 transition-colors leading-relaxed flex-1">
         {item.d}
       </p>
-      <a
-        href="#contact"
-        className="mt-5 sm:mt-6 inline-flex items-center gap-2 text-[13px] font-semibold group/link"
-      >
-        <span>{more}</span>
-        <ArrowUpRight
-          size={14}
-          weight="bold"
-          className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-        />
-      </a>
     </motion.article>
   );
 }

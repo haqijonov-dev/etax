@@ -22,6 +22,7 @@ export function About() {
   return (
     <section
       id="about"
+      aria-labelledby="about-heading"
       className="py-16 sm:py-24 lg:py-36 bg-cream relative overflow-hidden"
     >
       <div
@@ -44,7 +45,7 @@ export function About() {
           >
             <span className="eyebrow">{t("eyebrow")}</span>
             <div>
-              <h2 className="heading-1">
+              <h2 id="about-heading" className="heading-1">
                 {t("titleP1")}
                 <span className="accent">{t("titleE1")}</span>
                 {t("titleP2")}

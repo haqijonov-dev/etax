@@ -20,6 +20,18 @@ export function generateStaticParams() {
 
 type Params = Promise<{ locale: string }>;
 
+const OG_LOCALE: Record<string, string> = {
+  uz: "uz_UZ",
+  "uz-cyrl": "uz_Cyrl_UZ",
+  ru: "ru_RU",
+};
+
+const GEO_PLACENAME: Record<string, string> = {
+  uz: "Farg'ona",
+  "uz-cyrl": "Фарғона",
+  ru: "Фергана",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -33,14 +45,19 @@ export async function generateMetadata({
   const pageUrl =
     locale === routing.defaultLocale ? baseUrl : `${baseUrl}/${locale}`;
 
+  const ogLocale = OG_LOCALE[locale] ?? "uz_UZ";
+  const alternateLocale = Object.entries(OG_LOCALE)
+    .filter(([key]) => key !== locale)
+    .map(([, value]) => value);
+
   return {
-    title: t("title"),
+    title: { absolute: t("title") },
     description: t("description"),
     keywords: t("keywords"),
-    authors: [{ name: "E-TAX", url: baseUrl }],
-    creator: "E-TAX",
-    publisher: "E-TAX",
-    applicationName: "E-TAX",
+    authors: [{ name: "E-tax", url: baseUrl }],
+    creator: "E-tax",
+    publisher: "E-tax",
+    applicationName: "E-tax",
     category: "Finance",
     alternates: {
       canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
@@ -56,24 +73,24 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       url: pageUrl,
-      siteName: "E-TAX",
-      locale:
-        locale === "ru"
-          ? "ru_RU"
-          : locale === "uz-cyrl"
-            ? "uz_Cyrl_UZ"
-            : "uz_UZ",
-      alternateLocale:
-        locale === "ru"
-          ? ["uz_UZ", "uz_Cyrl_UZ"]
-          : locale === "uz-cyrl"
-            ? ["uz_UZ", "ru_RU"]
-            : ["uz_Cyrl_UZ", "ru_RU"],
+      siteName: "E-tax",
+      locale: ogLocale,
+      alternateLocale,
+      images: [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+          type: "image/png",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
+      images: ["/opengraph-image"],
     },
     robots: {
       index: true,
@@ -88,11 +105,21 @@ export async function generateMetadata({
       },
     },
     verification: {
-      google: "",
-      yandex: "",
+      google: process.env.GOOGLE_SITE_VERIFICATION,
+      yandex: process.env.YANDEX_VERIFICATION,
+      other: process.env.BING_VERIFICATION
+        ? { "msvalidate.01": process.env.BING_VERIFICATION }
+        : undefined,
     },
     other: {
       "format-detection": "telephone=no",
+      "geo.region": "UZ-FA",
+      "geo.placename": GEO_PLACENAME[locale] ?? "Farg'ona",
+      "geo.position": "40.3864;71.7864",
+      ICBM: "40.3864, 71.7864",
+      "revisit-after": "7 days",
+      rating: "general",
+      distribution: "global",
     },
   };
 }

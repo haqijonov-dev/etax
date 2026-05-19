@@ -12,6 +12,7 @@ export function Process() {
   return (
     <section
       id="process"
+      aria-labelledby="process-heading"
       className="py-16 sm:py-24 lg:py-36 bg-navy text-paper relative overflow-hidden"
     >
       <div
@@ -35,6 +36,7 @@ export function Process() {
             {t("eyebrow")}
           </motion.span>
           <motion.h2
+            id="process-heading"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -51,6 +53,7 @@ export function Process() {
           {steps.map((s, i) => (
             <motion.li
               key={s.n}
+              id={`process-${s.n}`}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}

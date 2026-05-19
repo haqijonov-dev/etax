@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -28,8 +29,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://taxservice.uz"),
-  title: { default: "E-TAX", template: "%s · E-TAX" },
-  description: "Buxgalteriya va soliq xizmatlari · Farg'ona · 200+ doimiy mijoz",
+  title: { default: "E-tax", template: "%s · E-tax" },
+  description:
+    "E-tax — Farg'ona shahridagi buxgalteriya va soliq xizmatlari. MChJ, YaTT va kichik bizneslar uchun: hisobot, NDS, e-faktura, HR, konsalting.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",
@@ -38,13 +40,22 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false, email: false, address: false },
 };
 
-export default function RootLayout({
+const LANG_TAG: Record<string, string> = {
+  uz: "uz-Latn-UZ",
+  "uz-cyrl": "uz-Cyrl-UZ",
+  ru: "ru-RU",
+};
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+  const htmlLang = LANG_TAG[locale] ?? "uz-Latn-UZ";
+
   return (
-    <html className={poppins.variable} suppressHydrationWarning>
+    <html lang={htmlLang} className={poppins.variable} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );
