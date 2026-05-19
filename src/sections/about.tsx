@@ -53,7 +53,7 @@ export function About() {
               <div className="flex items-center gap-3 mt-6 sm:mt-8">
                 <span className="h-px w-10 sm:w-12 bg-navy" />
                 <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-muted font-semibold">
-                  Etax · Farg'ona · 2012
+                  E-TAX · Farg'ona
                 </span>
               </div>
             </div>

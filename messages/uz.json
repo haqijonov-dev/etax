@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Etax — Sanoat uchun moliyaviy konsalting",
-    "description": "Etax — ishlab chiqarish, qurilish va texnologiya korxonalari uchun moliyaviy konsalting agentligi. Soliq optimizatsiyasi, byudjetlash va boshqaruv hisoboti bo'yicha 12+ yillik tajriba.",
-    "keywords": "moliyaviy konsalting, soliq optimizatsiyasi, IFRS, MSFO, CFO outsourcing, byudjetlash, Farg'ona, O'zbekiston"
+    "title": "E-TAX — Buxgalteriya va soliq xizmatlari",
+    "description": "E-TAX — biznesingiz uchun professional buxgalteriya va soliq xizmatlarini taqdim etuvchi jamoa. 200+ doimiy mijoz, 3–20 yillik tajriba, Farg'ona.",
+    "keywords": "buxgalteriya xizmati, soliq hisobotlari, NDS, foyda solig'i, HR hujjatlari, elektron hisob-faktura, konsalting, korxona ochish, Farg'ona, O'zbekiston"
   },
   "nav": {
     "links": {
@@ -15,62 +15,62 @@
     "cta": "Konsultatsiya"
   },
   "hero": {
-    "eyebrow": "Farg'ona · Moliyaviy konsalting",
-    "who": "Ishlab chiqarish, qurilish va texnologiya kompaniyalari uchun",
-    "headlinePre": "Raqamlar ortidagi",
-    "headlineEm": "strategiya",
-    "headlinePost": "",
-    "sub": "Etax — ishlab chiqarish va korxonalar uchun moliyaviy konsalting agentligi. Soliq optimizatsiyasi, byudjetlash va boshqaruv hisoboti bo'yicha 12+ yillik tajriba.",
-    "ctaPrimary": "Bepul auditdan boshlash",
+    "eyebrow": "Farg'ona · Buxgalteriya va soliq xizmatlari",
+    "who": "Korxonalar, MChJ va kichik bizneslar uchun",
+    "headlinePre": "Ishonchli",
+    "headlineEm": "buxgalteriya",
+    "headlinePost": "va soliq",
+    "sub": "E-TAX — biznesingizni ishonchli yuritish uchun professional buxgalteriya va soliq xizmatlarini taqdim etuvchi jamoa. Mijozlarimizga qulay, tezkor va aniq yechimlar taklif qilamiz.",
+    "ctaPrimary": "Bepul konsultatsiya",
     "ctaGhost": "Xizmatlar bilan tanishish",
     "marquee": [
-      "Soliq optimizatsiyasi",
-      "Byudjet rejalashtirish",
-      "Boshqaruv hisoboti",
-      "Moliyaviy due diligence",
-      "IFRS o'tish",
-      "CFO outsourcing"
+      "Buxgalteriya yuritish",
+      "Soliq hisobotlari",
+      "NDS va foyda solig'i",
+      "Kadrlar (HR) hujjatlari",
+      "Elektron hisob-fakturalar",
+      "Konsalting"
     ]
   },
   "stats": [
-    { "num": "320", "suffix": "+", "label": "Yakunlangan loyihalar — sanoat va texnologiya sohalarida" },
-    { "num": "14", "suffix": "B", "label": "So'mda mijozlar uchun tejalgan soliq va xarajatlar (2024)" },
-    { "num": "98", "suffix": "%", "label": "Mijozlar takroriy hamkorlikni davom ettiradi" },
-    { "num": "12", "suffix": "y", "label": "Sanoatda jamoaviy tajriba — IFRS va MSFO" }
+    { "num": "200", "suffix": "+", "label": "Doimiy mijoz va MChJ bilan hamkorlikdamiz" },
+    { "num": "100", "suffix": "%", "label": "Hisobotlar o'z vaqtida va xatosiz topshiriladi" },
+    { "num": "20", "suffix": "y", "label": "Jamoaning maksimal ish tajribasi (3–20 yil)" },
+    { "num": "8", "suffix": "+", "label": "Asosiy buxgalteriya va soliq xizmati yo'nalishi" }
   ],
   "services": {
     "eyebrow": "01 — Xizmatlar",
-    "titlePre": "Moliyaviy ",
-    "titleEm": "aniqlik",
-    "titlePost": " uchun xizmatlar",
-    "lead": "Har bir xizmat — alohida loyiha emas, balki sizning korxonangiz o'sishini ta'minlovchi tizimning bo'lagi.",
+    "titlePre": "Biznes uchun ",
+    "titleEm": "to'liq",
+    "titlePost": " xizmat to'plami",
+    "lead": "Har bir xizmat — alohida loyiha emas, balki sizning biznesingiz ishonchli ishlashini ta'minlovchi tizimning bo'lagi.",
     "more": "Batafsil",
     "items": [
-      { "n": "01", "t": "Soliq optimizatsiyasi", "d": "Qonun doirasida soliq yukini kamaytirish strategiyasi. Tahlil, hujjatlashtirish va Davlat soliq xizmati bilan ishlash.", "icon": "ChartLineUp" },
-      { "n": "02", "t": "Boshqaruv hisoboti", "d": "P&L, cash flow va KPI dashboardlari. Real vaqtda biznesingizni boshqarish uchun aniq raqamlar.", "icon": "ChartPieSlice" },
-      { "n": "03", "t": "Byudjetlash va prognoz", "d": "12 va 36 oylik moliyaviy modellar. Sezuvchanlik tahlili va investitsion qarorlar uchun ssenariy.", "icon": "Strategy" },
-      { "n": "04", "t": "IFRS / MSFO o'tish", "d": "Milliy standartlardan xalqaro standartlarga moslashtirilgan o'tish. Audit va kreditorlar uchun.", "icon": "Scales" },
-      { "n": "05", "t": "CFO outsourcing", "d": "Tajribali moliyaviy direktor xizmati — to'liq stafga ehtiyojsiz. Oylik retainer asosida.", "icon": "Briefcase" },
-      { "n": "06", "t": "Due diligence", "d": "M&A, investitsiya yoki kredit uchun moliyaviy va soliq due diligence. Yashirin risklarni aniqlash.", "icon": "MagnifyingGlass" }
+      { "n": "01", "t": "Buxgalteriya hisobi", "d": "Korxona buxgalteriya hisobini to'liq yuritish — birlamchi hujjatlardan to balanslargacha barchasini biz bajaramiz.", "icon": "ChartLineUp" },
+      { "n": "02", "t": "Soliq hisobotlari", "d": "NDS, foyda solig'i va boshqa barcha soliq hisobotlarini o'z vaqtida tayyorlash va davlat organlariga topshirish.", "icon": "ChartPieSlice" },
+      { "n": "03", "t": "Kadrlar (HR)", "d": "Kadrlar bo'limi hujjatlari, mehnat shartnomalari va ish haqi hisob-kitoblari — barchasi tartibda va qonun doirasida.", "icon": "UsersThree" },
+      { "n": "04", "t": "E-faktura va bank", "d": "Elektron hisob-fakturalar bilan to'liq ishlash hamda kunlik bank operatsiyalarini nazorat qilish.", "icon": "Scales" },
+      { "n": "05", "t": "Konsalting", "d": "Soliq va moliyaviy maslahatlar. Murakkab vaziyatlarda to'g'ri qaror qabul qilishingizga yordam beramiz.", "icon": "Briefcase" },
+      { "n": "06", "t": "Korxona ochish/yopish", "d": "MChJ, YaTT va korxonalarni ochish, yopish hamda qayta ro'yxatdan o'tkazish xizmatlari.", "icon": "Buildings" }
     ]
   },
   "about": {
     "eyebrow": "02 — Biz haqimizda",
     "titleP1": "Hisobchi emas — ",
-    "titleE1": "moliyaviy",
+    "titleE1": "ishonchli",
     "titleP2": " hamkor",
     "titleE2": "",
     "list": [
-      { "icon": "Buildings", "t": "Sanoatga xos tajriba", "d": "Ishlab chiqarish, qurilish va texnologiya — biz ushbu sohalarning ichki iqtisodini bilamiz." },
-      { "icon": "UsersThree", "t": "Bitta SPOC, butun jamoa", "d": "Sizda bitta yetakchi konsultant bo'ladi, lekin uning ortida 24 kishilik jamoa ishlaydi." },
-      { "icon": "Handshake", "t": "Shaffof retainer", "d": "Soatbay emas, oylik fiks. Hech qanday yashirin xarajatlar." },
-      { "icon": "GlobeHemisphereEast", "t": "Mahalliy + xalqaro", "d": "O'zbekiston qonunchiligini chuqur bilamiz, IFRS va Big Four metodologiyasini qo'llaymiz." }
+      { "icon": "Buildings", "t": "Turli sohalardagi tajriba", "d": "Savdo va distribyusiya, qurilish, logistika, xususiy bog'cha va o'quv markazlari, xizmat ko'rsatish — har bir sohaning hisob xususiyatlarini bilamiz." },
+      { "icon": "UsersThree", "t": "Tajribali jamoa", "d": "Buxgalteriya va soliq sohasida 3 yildan 20 yilgacha professional ish tajribasiga ega mutaxassislar." },
+      { "icon": "Handshake", "t": "Individual yondashuv", "d": "Har bir mijozga shaxsiy yondashuv. Biznes hajmingizga mos yechim va shaffof narx — yashirin xarajatlarsiz." },
+      { "icon": "GlobeHemisphereEast", "t": "Doimiy aloqa", "d": "Savol bersangiz — javob olasiz. Doimiy qo'llab-quvvatlash, soliq jarimalarini oldini olish va ishonchli xizmat." }
     ],
     "stats": [
-      { "v": "12+", "l": "Yil tajriba" },
-      { "v": "320+", "l": "Faol mijoz" },
-      { "v": "24", "l": "Mutaxassis" },
-      { "v": "A+", "l": "Mijoz reytingi" }
+      { "v": "200+", "l": "Doimiy mijoz" },
+      { "v": "20", "l": "Yil tajriba" },
+      { "v": "100%", "l": "O'z vaqtida" },
+      { "v": "A+", "l": "Mijoz ishonchi" }
     ]
   },
   "process": {
@@ -79,21 +79,21 @@
     "titleEm": "shaffof",
     "titlePost": " jarayon",
     "steps": [
-      { "n": "01", "t": "Tanishuv", "d": "60 daqiqalik bepul qo'ng'iroq. Sizning biznesingizni, raqamlaringizni va og'riq nuqtalarini eshitamiz." },
-      { "n": "02", "t": "Audit", "d": "Mavjud hisob, soliq va boshqaruv tizimini chuqur tahlil. 10–14 ish kuni." },
-      { "n": "03", "t": "Strategiya", "d": "Yo'l xaritasi, KPI va kvartal maqsadlari. Birgalikda imzolaymiz." },
-      { "n": "04", "t": "Hamkorlik", "d": "Oylik retainer, choraklik strateg sessiyalari, yillik hisobot." }
+      { "n": "01", "t": "Tanishuv", "d": "Bepul telefon yoki uchrashuv. Sizning biznesingizni, hozirgi holatini va ehtiyojlaringizni eshitamiz." },
+      { "n": "02", "t": "Tahlil", "d": "Mavjud buxgalteriya va soliq holatini ko'rib chiqamiz. Muammoli nuqtalarni aniqlab, yechim taklif qilamiz." },
+      { "n": "03", "t": "Taklif", "d": "Biznes hajmingizga mos individual narx va xizmat to'plami. Hamma shartlar oldindan kelishiladi." },
+      { "n": "04", "t": "Hamkorlik", "d": "Oylik doimiy hamkorlik. Hisobotlar o'z vaqtida, doimiy aloqa va to'liq qo'llab-quvvatlash." }
     ]
   },
   "testimonials": {
     "eyebrow": "04 — Mijozlar",
     "titlePre": "Bizga ishongan ",
-    "titleEm": "rahbarlar",
+    "titleEm": "mijozlar",
     "items": [
-      { "q": "Etax bilan ishlagan birinchi yilimizda soliq xarajatlarimiz 22% ga kamaydi va kredit liniyamizni oshirishga muvaffaq bo'ldik.", "a": "B", "n": "Bekzod Karimov", "r": "Bosh moliyaviy direktor · Farg'ona Metall LLC" },
-      { "q": "Boshqaruv hisoboti birinchi marta haqiqiy raqamlarni ko'rsata boshladi. Direktorlar kengashi qarorlari endi tuyg'uga emas, dalilga asoslangan.", "a": "D", "n": "Dilnoza Yusupova", "r": "Asoschi · Granite Build Group" },
-      { "q": "M&A jarayonida ularning due diligence komandasi bizning savdomizni 6 oyga tezlashtirdi va xaridor narxini 1.4M$ ga ko'tarishga yordam berdi.", "a": "S", "n": "Sherzod Aliyev", "r": "CEO · Lumen Tech Uzbekistan" },
-      { "q": "IFRS o'tish loyihamiz aniq belgilangan muddatda, byudjetdan oshmasdan tugadi. Audit komandamiz birinchi marta yashil chiroq berdi.", "a": "M", "n": "Madina Inomova", "r": "Bosh hisobchi · KIPRO Industries" }
+      { "q": "E-TAX bilan ishlash juda qulay — hammasi o'z vaqtida va tushunarli.", "a": "S", "n": "Savdo firmasi", "r": "Doimiy mijoz · Farg'ona" },
+      { "q": "Oldin soliqdan muammo ko'p edi, hozir hammasi tartibda.", "a": "Q", "n": "Qurilish kompaniyasi", "r": "Mijoz · Qurilish sohasi" },
+      { "q": "Ishonch bilan topshirsa bo'ladigan jamoa.", "a": "L", "n": "Logistika firmasi", "r": "Doimiy hamkor · Avtopark" },
+      { "q": "Hisobotlar o'z vaqtida, savollarga tezda javob — biznes uchun aynan shu kerak.", "a": "T", "n": "O'quv markazi", "r": "Mijoz · Ta'lim sohasi" }
     ]
   },
   "faq": {
@@ -101,37 +101,37 @@
     "titlePre": "Tez-tez ",
     "titleEm": "beriladigan savollar",
     "items": [
-      { "q": "Etax qaysi sohada ishlaydigan korxonalar bilan ishlaydi?", "a": "Asosan ishlab chiqarish, qurilish, energiya va texnologiya korxonalari bilan. Yillik aylanmasi 5 mlrd so'mdan yuqori bo'lgan o'rta va yirik biznes uchun maxsus moslangan paketlar bor." },
-      { "q": "Narxlar qanday shakllantiriladi?", "a": "Biz soatbay ishlamaymiz. Har bir paket oldindan kelishilgan oylik retainer asosida shakllantiriladi. Bu sizga byudjetni aniq rejalashtirish va yashirin xarajatlarsiz ishlash imkonini beradi." },
-      { "q": "Loyiha qancha vaqtda boshlanadi?", "a": "Tanishuvdan boshlab birinchi auditni 7 ish kuni ichida boshlaymiz. To'liq strategiya va birinchi hisobot odatda 4–6 hafta ichida tayyor bo'ladi." },
-      { "q": "Mavjud hisobchimiz va Etax birga ishlay oladimi?", "a": "Albatta — bu eng ko'p uchraydigan format. Biz strategiya, optimizatsiya va hisobot tomonida ishlaymiz, sizning ichki jamoangiz kunlik operatsiyalarni davom ettiradi." },
-      { "q": "Maxfiylik kafolatlanganmi?", "a": "Har bir hamkorlik NDA bilan boshlanadi. Ma'lumotlaringiz shifrlangan saqlanadi, kirish faqat sizning loyiha jamoangiz uchun ochiq." },
-      { "q": "Qanday hisobot olaman?", "a": "Oylik P&L, cash flow va KPI dashboard. Choraklik strateg sessiya. Yillik to'liq audit va keyingi yilga reja." }
+      { "q": "E-TAX qaysi sohadagi bizneslar bilan ishlaydi?", "a": "Savdo va distribyusiya kompaniyalari, xususiy bog'chalar va o'quv markazlari, avtopark va logistika firmalari, qurilish kompaniyalari, xizmat ko'rsatish bizneslari — turli sohalarda 200+ dan ortiq firma va MChJ bilan doimiy hamkorlikda ishlaymiz." },
+      { "q": "Xizmat narxi qancha?", "a": "Narx biznes hajmiga qarab belgilanadi. Kichik bizneslar uchun: 500 000 – 1 500 000 so'm. O'rta bizneslar uchun: 1 500 000 – 7 000 000 so'm. Aniq narx individual kelishuv asosida belgilanadi." },
+      { "q": "Hisobotlar o'z vaqtida topshiriladimi?", "a": "Ha — biz 100% o'z vaqtida ishlaymiz. Soliq jarimalarini oldini olish uchun barcha hisobotlar belgilangan muddatda, xatosiz topshiriladi." },
+      { "q": "Korxona ochish va yopishda yordam berasizmi?", "a": "Albatta. MChJ, YaTT va korxonalarni ochish, yopish hamda qayta ro'yxatdan o'tkazish xizmatlarini to'liq taqdim etamiz." },
+      { "q": "Elektron hisob-fakturalar va bank bilan ishlaysizmi?", "a": "Ha, biz e-faktura tizimida to'liq ishlaymiz va kundalik bank operatsiyalarini ham nazorat qilib boramiz. Sizning ichki jamoangiz qolgan operatsiyalarni davom ettiradi." },
+      { "q": "Qanday bog'lanish mumkin?", "a": "Telefon: +998 90 849 8989. Telegram: @omad9999. Farg'ona shahrida joylashganmiz — uchrashuvga ham kelishingiz mumkin." }
     ]
   },
   "cta": {
     "eyebrow": "Birga ishlashga tayyor",
-    "titlePre": "Keling, ",
-    "titleEm": "raqamlarni",
-    "titlePost": " birga ko'rib chiqamiz",
-    "sub": "60 daqiqalik bepul tanishuv qo'ng'irog'ida sizning bugungi moliyaviy holatingizni baholaymiz va 3 ta aniq tavsiya beramiz.",
-    "ctaPrimary": "Qo'ng'iroqni rejalashtirish",
-    "ctaGhost": "Brifni yuborish",
+    "titlePre": "Biznesingizni ",
+    "titleEm": "ishonchli",
+    "titlePost": " qo'llarda yuriting",
+    "sub": "Bepul konsultatsiya uchun bog'laning. Sizning biznes hajmingizga mos individual xizmat va narx taklif qilamiz.",
+    "ctaPrimary": "Konsultatsiya olish",
+    "ctaGhost": "Telegramda yozish",
     "channels": [
-      { "label": "Telefon", "val": "+998 71 200 14 88", "icon": "Phone" },
-      { "label": "Pochta", "val": "hello@etax.uz", "icon": "EnvelopeSimple" },
-      { "label": "Manzil", "val": "Farg'ona, Amir Temur 107A", "icon": "MapPin" }
+      { "label": "Telefon", "val": "+998 90 849 8989", "icon": "Phone" },
+      { "label": "Telegram", "val": "@omad9999", "icon": "EnvelopeSimple" },
+      { "label": "Manzil", "val": "Farg'ona shahri", "icon": "MapPin" }
     ]
   },
   "footer": {
-    "address": "Farg'ona shahri, Amir Temur ko'chasi 107A, 4-qavat",
+    "address": "Farg'ona shahri, O'zbekiston",
     "addressHeading": "Manzil",
     "groups": [
-      { "h": "Xizmatlar", "items": ["Soliq optimizatsiyasi", "Boshqaruv hisoboti", "Byudjetlash", "IFRS o'tish", "CFO outsourcing"] },
-      { "h": "Kompaniya", "items": ["Biz haqimizda", "Jamoa", "Karera", "Yangiliklar"] },
-      { "h": "Aloqa", "items": ["Farg'ona ofisi", "Samarqand ofisi", "hello@etax.uz", "+998 71 200 14 88"] }
+      { "h": "Xizmatlar", "items": ["Buxgalteriya yuritish", "Soliq hisobotlari", "Kadrlar (HR)", "E-faktura va bank", "Konsalting", "Korxona ochish/yopish"] },
+      { "h": "Kompaniya", "items": ["Biz haqimizda", "Xizmatlar", "Jarayon", "Mijozlar fikri"] },
+      { "h": "Aloqa", "items": ["Farg'ona shahri", "+998 90 849 8989", "Telegram: @omad9999"] }
     ],
-    "copy": "© 2026 Etax LLC — Litsenziya: AT-21438",
+    "copy": "© 2026 E-TAX · Farg'ona",
     "legal": ["Maxfiylik siyosati", "Foydalanish shartlari"]
   }
 }

@@ -11,7 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: locale === routing.defaultLocale ? 1 : 0.9,
     alternates: {
       languages: {
-        uz: BASE_URL,
+        "uz-Latn": BASE_URL,
+        "uz-Cyrl": `${BASE_URL}/uz-cyrl`,
         ru: `${BASE_URL}/ru`,
       },
     },

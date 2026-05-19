@@ -1,10 +1,10 @@
 import { ImageResponse } from "next/og";
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;
-export const OG_ALT = "Etax — Raqamlar ortidagi strategiya";
+export const OG_ALT = "E-TAX — Ishonchli buxgalteriya va soliq xizmatlari";
 export const OG_CONTENT_TYPE = "image/png";
 
-type Locale = "uz" | "ru";
+type Locale = "uz" | "uz-cyrl" | "ru";
 
 const COPY: Record<Locale, {
   eyebrow: string;
@@ -14,18 +14,25 @@ const COPY: Record<Locale, {
   stats: string;
 }> = {
   uz: {
-    eyebrow: "ETAX · FARG'ONA · EST. 2012",
-    h1: "Raqamlar ortidagi",
-    h1Accent: "strategiya.",
-    sub: "Moliyaviy konsalting · Soliq · IFRS · CFO",
-    stats: "12+ YIL · 320+ MIJOZ",
+    eyebrow: "E-TAX · FARG'ONA",
+    h1: "Ishonchli",
+    h1Accent: "buxgalteriya.",
+    sub: "Buxgalteriya · Soliq · HR · Konsalting",
+    stats: "200+ MIJOZ · 3–20 YIL TAJRIBA",
+  },
+  "uz-cyrl": {
+    eyebrow: "E-TAX · ФАРҒОНА",
+    h1: "Ишончли",
+    h1Accent: "бухгалтерия.",
+    sub: "Бухгалтерия · Солиқ · HR · Консалтинг",
+    stats: "200+ МИЖОЗ · 3–20 ЙИЛ ТАЖРИБА",
   },
   ru: {
-    eyebrow: "ETAX · ФЕРГАНА · EST. 2012",
-    h1: "За цифрами —",
-    h1Accent: "стратегия.",
-    sub: "Финансовый консалтинг · Налоги · IFRS · CFO",
-    stats: "12+ ЛЕТ · 320+ КЛИЕНТОВ",
+    eyebrow: "E-TAX · ФЕРГАНА",
+    h1: "Надёжная",
+    h1Accent: "бухгалтерия.",
+    sub: "Бухгалтерия · Налоги · HR · Консалтинг",
+    stats: "200+ КЛИЕНТОВ · 3–20 ЛЕТ ОПЫТА",
   },
 };
 

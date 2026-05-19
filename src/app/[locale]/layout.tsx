@@ -37,15 +37,16 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
-    authors: [{ name: "Etax", url: baseUrl }],
-    creator: "Etax",
-    publisher: "Etax",
-    applicationName: "Etax",
+    authors: [{ name: "E-TAX", url: baseUrl }],
+    creator: "E-TAX",
+    publisher: "E-TAX",
+    applicationName: "E-TAX",
     category: "Finance",
     alternates: {
       canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
       languages: {
-        uz: "/",
+        "uz-Latn": "/",
+        "uz-Cyrl": "/uz-cyrl",
         ru: "/ru",
         "x-default": "/",
       },
@@ -55,16 +56,24 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       url: pageUrl,
-      siteName: "Etax",
-      locale: locale === "uz" ? "uz_UZ" : "ru_RU",
-      alternateLocale: locale === "uz" ? ["ru_RU"] : ["uz_UZ"],
+      siteName: "E-TAX",
+      locale:
+        locale === "ru"
+          ? "ru_RU"
+          : locale === "uz-cyrl"
+            ? "uz_Cyrl_UZ"
+            : "uz_UZ",
+      alternateLocale:
+        locale === "ru"
+          ? ["uz_UZ", "uz_Cyrl_UZ"]
+          : locale === "uz-cyrl"
+            ? ["uz_UZ", "ru_RU"]
+            : ["uz_Cyrl_UZ", "ru_RU"],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      creator: "@taxserviceuz",
-      site: "@taxserviceuz",
     },
     robots: {
       index: true,

@@ -28,8 +28,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://taxservice.uz"),
-  title: { default: "Etax", template: "%s · Etax" },
-  description: "Financial consulting for industry.",
+  title: { default: "E-TAX", template: "%s · E-TAX" },
+  description: "Buxgalteriya va soliq xizmatlari · Farg'ona · 200+ doimiy mijoz",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",

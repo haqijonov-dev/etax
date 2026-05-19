@@ -34,6 +34,12 @@ export function LangToggle({
     ? "text-paper/60 hover:text-paper"
     : "text-ink-2 hover:text-ink";
 
+  const LABELS: Record<string, string> = {
+    uz: "UZ",
+    "uz-cyrl": "УЗ",
+    ru: "RU",
+  };
+
   return (
     <div
       role="group"
@@ -53,7 +59,7 @@ export function LangToggle({
               active ? activeCls : inactiveCls
             }`}
           >
-            {code.toUpperCase()}
+            {LABELS[code] ?? code.toUpperCase()}
           </button>
         );
       })}

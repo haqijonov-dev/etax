@@ -8,5 +8,7 @@ type Params = { params: Promise<{ locale: string }> };
 
 export default async function OgImage({ params }: Params) {
   const { locale } = await params;
-  return renderOgImage(locale === "ru" ? "ru" : "uz");
+  if (locale === "ru") return renderOgImage("ru");
+  if (locale === "uz-cyrl") return renderOgImage("uz-cyrl");
+  return renderOgImage("uz");
 }
