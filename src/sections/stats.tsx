@@ -18,9 +18,9 @@ export function Stats() {
             const isFirst = i === 0;
             const isLast = i === items.length - 1;
             const align = isFirst
-              ? "items-start text-left"
+              ? "items-center text-center sm:items-start sm:text-left"
               : isLast
-                ? "items-end text-right"
+                ? "items-center text-center sm:items-end sm:text-right"
                 : "items-center text-center";
 
             const padX = isFirst

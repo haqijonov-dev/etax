@@ -9,7 +9,6 @@ import {
 import { routing, type Locale } from "@/i18n/routing";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { RevealObserver } from "@/components/reveal-observer";
-import { HtmlLang } from "@/components/html-lang";
 
 function isValidLocale(value: string): value is Locale {
   return (routing.locales as readonly string[]).includes(value);
@@ -20,6 +19,18 @@ export function generateStaticParams() {
 }
 
 type Params = Promise<{ locale: string }>;
+
+const OG_LOCALE: Record<string, string> = {
+  uz: "uz_UZ",
+  "uz-cyrl": "uz_Cyrl_UZ",
+  ru: "ru_RU",
+};
+
+const GEO_PLACENAME: Record<string, string> = {
+  uz: "Farg'ona",
+  "uz-cyrl": "Фарғона",
+  ru: "Фергана",
+};
 
 export async function generateMetadata({
   params,
@@ -34,19 +45,25 @@ export async function generateMetadata({
   const pageUrl =
     locale === routing.defaultLocale ? baseUrl : `${baseUrl}/${locale}`;
 
+  const ogLocale = OG_LOCALE[locale] ?? "uz_UZ";
+  const alternateLocale = Object.entries(OG_LOCALE)
+    .filter(([key]) => key !== locale)
+    .map(([, value]) => value);
+
   return {
-    title: t("title"),
+    title: { absolute: t("title") },
     description: t("description"),
     keywords: t("keywords"),
-    authors: [{ name: "Etax", url: baseUrl }],
-    creator: "Etax",
-    publisher: "Etax",
-    applicationName: "Etax",
+    authors: [{ name: "E-tax", url: baseUrl }],
+    creator: "E-tax",
+    publisher: "E-tax",
+    applicationName: "E-tax",
     category: "Finance",
     alternates: {
       canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
       languages: {
-        uz: "/",
+        "uz-Latn": "/",
+        "uz-Cyrl": "/uz-cyrl",
         ru: "/ru",
         "x-default": "/",
       },
@@ -56,16 +73,24 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       url: pageUrl,
-      siteName: "Etax",
-      locale: locale === "uz" ? "uz_UZ" : "ru_RU",
-      alternateLocale: locale === "uz" ? ["ru_RU"] : ["uz_UZ"],
+      siteName: "E-tax",
+      locale: ogLocale,
+      alternateLocale,
+      images: [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+          type: "image/png",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      creator: "@taxserviceuz",
-      site: "@taxserviceuz",
+      images: ["/opengraph-image"],
     },
     robots: {
       index: true,
@@ -89,7 +114,7 @@ export async function generateMetadata({
     other: {
       "format-detection": "telephone=no",
       "geo.region": "UZ-FA",
-      "geo.placename": locale === "ru" ? "Фергана" : "Farg'ona",
+      "geo.placename": GEO_PLACENAME[locale] ?? "Farg'ona",
       "geo.position": "40.3864;71.7864",
       ICBM: "40.3864, 71.7864",
       "revisit-after": "7 days",
@@ -114,7 +139,6 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <HtmlLang locale={locale} />
       <SmoothScroll />
       <RevealObserver />
       {children}

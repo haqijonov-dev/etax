@@ -20,6 +20,7 @@ import {
   CaretRight,
   ArrowUpRight,
   Sparkle,
+  TelegramLogo,
 } from "@phosphor-icons/react/dist/ssr";
 
 const REGISTRY = {
@@ -42,6 +43,7 @@ const REGISTRY = {
   CaretRight,
   ArrowUpRight,
   Sparkle,
+  TelegramLogo,
 } as const;
 
 export type IconName = keyof typeof REGISTRY;

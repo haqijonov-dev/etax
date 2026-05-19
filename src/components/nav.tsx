@@ -43,10 +43,10 @@ export function Nav({ initialDark = true }: { initialDark?: boolean }) {
         className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${headerCls}`}
       >
         <div className="wrap flex items-center justify-between gap-4 sm:gap-8 py-3 sm:py-3.5">
-          <a href="#" className="inline-flex items-center shrink-0" aria-label="Etax">
+          <a href="#" className="inline-flex items-center shrink-0" aria-label="E-tax — Buxgalteriya va soliq xizmatlari Farg'ona">
             <Image
               src={onDark ? "/white-logo.png" : "/black-logo.png"}
-              alt="Etax"
+              alt="E-tax buxgalteriya xizmati Farg'ona"
               width={400}
               height={120}
               priority
@@ -143,9 +143,9 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
         className="mt-auto pt-10"
       >
         <p className="text-xs sm:text-sm text-paper/60 mb-1 uppercase tracking-[0.18em] font-mono">
-          Farg'ona · Amir Temur 107A
+          Farg'ona shahri · +998 90 849 8989
         </p>
-        <strong className="text-base sm:text-lg font-medium">hello@etax.uz</strong>
+        <strong className="text-base sm:text-lg font-medium">Telegram: @omad9999</strong>
       </motion.div>
     </motion.div>
   );

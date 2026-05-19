@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Etax — Moliyaviy konsalting",
-    short_name: "Etax",
+    name: "E-tax — Buxgalteriya va soliq xizmatlari",
+    short_name: "E-tax",
     description:
-      "Etax — Farg'ona va O'zbekiston bo'ylab korxonalar uchun moliyaviy konsalting agentligi. Soliq, IFRS, CFO outsourcing.",
+      "E-tax — Farg'ona shahridagi buxgalteriya va soliq xizmati. MChJ, YaTT va kichik bizneslar uchun: hisobot, NDS, e-faktura, HR, konsalting, korxona ochish.",
     start_url: "/",
     scope: "/",
     display: "standalone",

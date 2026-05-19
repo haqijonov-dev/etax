@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "@phosphor-icons/react/dist/ssr";
 
 type Group = { h: string; items: string[] };
@@ -10,7 +11,6 @@ type Group = { h: string; items: string[] };
 export function Footer() {
   const t = useTranslations("footer");
   const groups = t.raw("groups") as Group[];
-  const legal = t.raw("legal") as string[];
 
   return (
     <footer className="bg-paper text-navy pt-14 sm:pt-20 lg:pt-32 pb-8 relative overflow-hidden">
@@ -39,12 +39,12 @@ export function Footer() {
             <div className="flex items-center gap-3 mb-6 sm:mb-8">
               <span className="inline-block w-8 h-px bg-primary" />
               <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-primary-deep font-mono">
-                ★ Etax · est. 2012
+                ★ E-TAX · Farg'ona
               </span>
             </div>
             <Image
               src="/black-logo.png"
-              alt="Etax"
+              alt="E-tax buxgalteriya va soliq xizmatlari Farg'ona"
               width={800}
               height={240}
               className="h-14 sm:h-20 lg:h-32 w-auto"
@@ -111,38 +111,50 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 sm:gap-6 pt-6 sm:pt-8 border-t border-line">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-[12px] sm:text-[13px] text-muted">
-            <span>{t("copy")}</span>
-            <span className="hidden sm:inline-block w-1 h-1 bg-muted/40 rounded-full" />
-            <span className="flex gap-4 sm:gap-5 flex-wrap">
-              {legal.map((l, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="hover:text-primary-deep transition-colors duration-300"
-                >
-                  {l}
-                </a>
-              ))}
-            </span>
-          </div>
-
-          <a
-            href="#top"
-            className="group flex items-center gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-mono text-muted hover:text-primary-deep transition-colors duration-300"
-          >
-            <span>Yuqoriga qaytish</span>
-            <span className="inline-flex w-11 h-11 sm:w-10 sm:h-10 border border-line items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">
-              <ArrowUp
-                size={14}
-                weight="bold"
-                className="text-navy group-hover:text-paper transition-all duration-500 group-hover:-translate-y-0.5"
-              />
-            </span>
-          </a>
+        <div className="flex justify-start pt-6 sm:pt-8 border-t border-line">
+          <span className="text-[12px] sm:text-[13px] text-muted">{t("copy")}</span>
         </div>
       </div>
+
+      <ScrollToTop />
     </footer>
+  );
+}
+
+function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.button
+          type="button"
+          onClick={handleClick}
+          aria-label="Yuqoriga qaytish"
+          initial={{ opacity: 0, y: 16, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 16, scale: 0.9 }}
+          transition={{ duration: 0.25, ease: [0.2, 0.7, 0.2, 1] }}
+          className="group fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-50 inline-flex w-12 h-12 sm:w-13 sm:h-13 items-center justify-center rounded-full bg-navy text-paper border border-paper shadow-lg shadow-navy/20 hover:bg-primary hover:border-paper transition-colors duration-300"
+        >
+          <ArrowUp
+            size={18}
+            weight="bold"
+            className="transition-transform duration-300 group-hover:-translate-y-0.5"
+          />
+        </motion.button>
+      )}
+    </AnimatePresence>
   );
 }

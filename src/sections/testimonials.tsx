@@ -1,17 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quotes } from "@phosphor-icons/react/dist/ssr";
 
 type Item = { q: string; a: string; n: string; r: string };
 
+const AUTOPLAY_MS = 6000;
+
 export function Testimonials() {
   const t = useTranslations("testimonials");
   const items = t.raw("items") as Item[];
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
   const current = items[active];
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setTimeout(() => {
+      setActive((i) => (i + 1) % items.length);
+    }, AUTOPLAY_MS);
+    return () => clearTimeout(id);
+  }, [active, paused, items.length]);
 
   return (
     <section
@@ -48,7 +59,11 @@ export function Testimonials() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-3 sm:gap-5 lg:gap-6 items-stretch">
+        <div
+          className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-3 sm:gap-5 lg:gap-6 items-stretch"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
           <div className="flex flex-col h-full order-2 lg:order-1">
             <ul className="flex flex-col gap-2.5 sm:gap-3 lg:gap-4 flex-1">
               {items.map((it, i) => {
