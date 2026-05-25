@@ -11,6 +11,20 @@ type Group = { h: string; items: string[] };
 export function Footer() {
   const t = useTranslations("footer");
   const groups = t.raw("groups") as Group[];
+  const [contrastMode, setContrastMode] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const sync = () =>
+      setContrastMode(root.getAttribute("data-a11y-view") === "contrast");
+    sync();
+    const observer = new MutationObserver(sync);
+    observer.observe(root, {
+      attributes: true,
+      attributeFilter: ["data-a11y-view"],
+    });
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <footer className="bg-paper text-navy pt-14 sm:pt-20 lg:pt-32 pb-8 relative overflow-hidden">
@@ -43,7 +57,7 @@ export function Footer() {
               </span>
             </div>
             <Image
-              src="/black-logo.png"
+              src={contrastMode ? "/white-logo.png" : "/black-logo.png"}
               alt="E-tax buxgalteriya va soliq xizmatlari Farg'ona"
               width={800}
               height={240}
@@ -148,7 +162,7 @@ function ScrollToTop() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 16, scale: 0.9 }}
           transition={{ duration: 0.25, ease: [0.2, 0.7, 0.2, 1] }}
-          className="group fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-50 inline-flex w-12 h-12 sm:w-13 sm:h-13 items-center justify-center rounded-full bg-navy text-paper border border-paper shadow-lg shadow-navy/20 hover:bg-primary hover:border-paper transition-colors duration-300"
+          className="group fixed bottom-20 right-5 sm:bottom-24 sm:right-8 z-50 inline-flex w-12 h-12 sm:w-13 sm:h-13 items-center justify-center rounded-full bg-navy text-paper border border-paper shadow-lg shadow-navy/20 hover:bg-primary hover:border-paper transition-colors duration-300"
         >
           <ArrowUp
             size={18}
