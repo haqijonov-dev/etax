@@ -47,6 +47,8 @@ export function Footer() {
               alt="E-tax buxgalteriya va soliq xizmatlari Farg'ona"
               width={800}
               height={240}
+              loading="lazy"
+              sizes="(min-width: 1024px) 360px, (min-width: 640px) 240px, 180px"
               className="h-14 sm:h-20 lg:h-32 w-auto"
             />
           </motion.div>
@@ -92,18 +94,17 @@ export function Footer() {
               <ul className="flex flex-col gap-3 sm:gap-3.5">
                 {g.items.map((it, j) => (
                   <li key={j}>
-                    <a
-                      href="#"
-                      className="group inline-flex items-center gap-3 text-[14px] sm:text-[15px] lg:text-[16px] text-navy hover:text-primary-deep transition-colors duration-300 py-1"
+                    <span
+                      className="group inline-flex items-center gap-3 text-[14px] sm:text-[15px] lg:text-[16px] text-navy py-1"
                     >
                       <span
-                        aria-hidden
+                        aria-hidden="true"
                         className="inline-block w-0 h-px bg-primary transition-all duration-500 group-hover:w-5"
                       />
                       <span className="transition-transform duration-500 group-hover:translate-x-1">
                         {it}
                       </span>
-                    </a>
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -141,6 +142,7 @@ function ScrollToTop() {
         <motion.button
           type="button"
           onClick={handleClick}
+          title="Yuqoriga qaytish"
           aria-label="Yuqoriga qaytish"
           initial={{ opacity: 0, y: 16, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}

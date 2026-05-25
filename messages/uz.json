@@ -24,9 +24,9 @@
     "ctaPrimary": "Bepul konsultatsiya",
     "ctaGhost": "Xizmatlar bilan tanishish",
     "marquee": [
-      "Buxgalteriya yuritish",
+      "Buxgalteriya hisobini yuritish",
       "Soliq hisobotlari",
-      "NDS va foyda solig'i",
+      "QQS",
       "Kadrlar (HR) hujjatlari",
       "Elektron hisob-fakturalar",
       "Konsalting"
@@ -52,6 +52,25 @@
       { "n": "04", "t": "E-faktura va bank", "d": "Elektron hisob-fakturalar bilan to'liq ishlash hamda kunlik bank operatsiyalarini nazorat qilish.", "icon": "Scales" },
       { "n": "05", "t": "Konsalting", "d": "Soliq va moliyaviy maslahatlar. Murakkab vaziyatlarda to'g'ri qaror qabul qilishingizga yordam beramiz.", "icon": "Briefcase" },
       { "n": "06", "t": "Korxona ochish/yopish", "d": "MChJ, YaTT va korxonalarni ochish, yopish hamda qayta ro'yxatdan o'tkazish xizmatlari.", "icon": "Buildings" }
+    ]
+  },
+  "audit": {
+    "eyebrow": "01a — Soliq tekshiruvi yordami",
+    "titlePre": "Soliq tekshiruvlari va ",
+    "titleEm": "muammolar",
+    "titlePost": " bo'yicha yechim",
+    "lead": "Kameral tekshiruv, sayyor soliq tekshiruvi va soliq auditi davomida aniqlangan kamchiliklar bo'yicha qonuniy yechim va maslahatlar beramiz. Korxona buxgalteriyasini tiklash hamda tuzatilgan qayta hisobotlarni topshirish xizmatlarini bajaramiz.",
+    "row1": [
+      { "t": "Kameral tekshiruv", "d": "Kameral tekshiruv natijalari bo'yicha qonuniy yechim va batafsil maslahatlar." },
+      { "t": "Sayyor soliq tekshiruvi", "d": "Sayyor tekshiruv jarayonida tegishli hujjat va izohlarni tayyorlashda yordam." },
+      { "t": "Soliq auditi", "d": "Soliq auditi tekshiruvida aniqlangan kamchiliklar bo'yicha to'liq qo'llab-quvvatlash." },
+      { "t": "Qonuniy yechim", "d": "Aniqlangan kamchiliklarni qonun doirasida bartaraf etish bo'yicha yo'l-yo'riq." }
+    ],
+    "row2": [
+      { "t": "Buxgalteriyani tiklash", "d": "Korxona buxgalteriya hisobini boshidan to'liq tiklash xizmati." },
+      { "t": "Qayta hisobotlar", "d": "Tuzatilgan qayta hisobotlarni tayyorlash va davlat organlariga topshirish." },
+      { "t": "Jarima minimizatsiyasi", "d": "Soliq jarimalari va sanksiyalarini qonun doirasida kamaytirish bo'yicha strategiya." },
+      { "t": "Soliq inspeksiyasi bilan ishlash", "d": "Soliq organlari bilan tushuntirishlar, e'tirozlar va yozishmalarni olib borish." }
     ]
   },
   "about": {

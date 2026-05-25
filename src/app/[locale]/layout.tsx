@@ -9,6 +9,7 @@ import {
 import { routing, type Locale } from "@/i18n/routing";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { RevealObserver } from "@/components/reveal-observer";
+import { MotionProviders } from "@/components/motion-providers";
 
 function isValidLocale(value: string): value is Locale {
   return (routing.locales as readonly string[]).includes(value);
@@ -137,11 +138,22 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const messages = await getMessages();
 
+  const skipLabel: Record<string, string> = {
+    uz: "Asosiy mazmunga o'tish",
+    "uz-cyrl": "Асосий мазмунга ўтиш",
+    ru: "Перейти к основному содержанию",
+  };
+
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <SmoothScroll />
-      <RevealObserver />
-      {children}
+      <MotionProviders>
+        <a href="#main" className="skip-link">
+          {skipLabel[locale] ?? skipLabel.uz}
+        </a>
+        <SmoothScroll />
+        <RevealObserver />
+        {children}
+      </MotionProviders>
     </NextIntlClientProvider>
   );
 }

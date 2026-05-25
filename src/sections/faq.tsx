@@ -42,44 +42,58 @@ export function Faq() {
           </motion.h2>
         </div>
 
-        <div className="border-t border-line">
+        <div className="border-t border-line" role="list">
           {items.map((it, i) => {
             const isOpen = open === i;
+            const buttonId = `faq-q-${i}`;
+            const panelId = `faq-a-${i}`;
             return (
               <motion.div
                 key={i}
+                role="listitem"
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="border-b border-line"
               >
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? -1 : i)}
-                  aria-expanded={isOpen}
-                  className="w-full grid grid-cols-[1fr_auto] sm:grid-cols-[64px_1fr_48px] items-center gap-4 sm:gap-6 py-5 sm:py-7 text-left"
-                >
-                  <span className="hidden sm:inline text-primary-deep text-base tracking-wide">
-                    — 0{i + 1}
-                  </span>
-                  <span className="text-[17px] sm:text-[24px] lg:text-[28px] font-semibold tracking-tight leading-snug pr-2">
-                    {it.q}
-                  </span>
-                  <span
-                    className={`inline-flex w-11 h-11 sm:w-12 sm:h-12 shrink-0 items-center justify-center border transition-all duration-300 ${
-                      isOpen
-                        ? "bg-navy border-navy text-paper rotate-45"
-                        : "border-line text-ink hover:border-primary hover:text-primary-deep"
-                    }`}
+                <h3 className="m-0">
+                  <button
+                    id={buttonId}
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : i)}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    className="w-full grid grid-cols-[1fr_auto] sm:grid-cols-[64px_1fr_48px] items-center gap-4 sm:gap-6 py-5 sm:py-7 text-left"
                   >
-                    <Plus size={18} weight="bold" />
-                  </span>
-                </button>
+                    <span
+                      aria-hidden="true"
+                      className="hidden sm:inline text-primary-deep text-base tracking-wide"
+                    >
+                      — 0{i + 1}
+                    </span>
+                    <span className="text-[17px] sm:text-[24px] lg:text-[28px] font-semibold tracking-tight leading-snug pr-2">
+                      {it.q}
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className={`inline-flex w-11 h-11 sm:w-12 sm:h-12 shrink-0 items-center justify-center border transition-all duration-300 ${
+                        isOpen
+                          ? "bg-navy border-navy text-paper rotate-45"
+                          : "border-line text-ink hover:border-primary hover:text-primary-deep"
+                      }`}
+                    >
+                      <Plus size={18} weight="bold" />
+                    </span>
+                  </button>
+                </h3>
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
                       key="content"
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={buttonId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -87,7 +101,7 @@ export function Faq() {
                       className="overflow-hidden"
                     >
                       <div className="grid grid-cols-1 sm:grid-cols-[64px_1fr] gap-4 sm:gap-6 pb-6 sm:pb-8">
-                        <span className="hidden sm:block" />
+                        <span aria-hidden="true" className="hidden sm:block" />
                         <p className="text-[14.5px] sm:text-[15.5px] text-ink-2 max-w-[64ch] leading-relaxed">
                           {it.a}
                         </p>

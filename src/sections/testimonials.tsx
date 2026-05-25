@@ -65,14 +65,44 @@ export function Testimonials() {
           onMouseLeave={() => setPaused(false)}
         >
           <div className="flex flex-col h-full order-2 lg:order-1">
-            <ul className="flex flex-col gap-2.5 sm:gap-3 lg:gap-4 flex-1">
+            <ul
+              role="tablist"
+              aria-label="Mijozlar fikrlari"
+              className="flex flex-col gap-2.5 sm:gap-3 lg:gap-4 flex-1"
+            >
               {items.map((it, i) => {
                 const isActive = active === i;
+                const tabId = `testi-tab-${i}`;
+                const panelId = `testi-panel-${i}`;
                 return (
-                  <li key={i} className="flex-1 min-h-[88px] sm:min-h-[100px] lg:min-h-[120px]">
+                  <li
+                    key={i}
+                    role="presentation"
+                    className="flex-1 min-h-[88px] sm:min-h-[100px] lg:min-h-[120px]"
+                  >
                     <button
+                      id={tabId}
+                      role="tab"
+                      type="button"
+                      aria-selected={isActive}
+                      aria-controls={panelId}
+                      tabIndex={isActive ? 0 : -1}
                       onClick={() => setActive(i)}
-                      aria-pressed={isActive}
+                      onKeyDown={(e) => {
+                        if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+                          e.preventDefault();
+                          setActive((active + 1) % items.length);
+                        } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+                          e.preventDefault();
+                          setActive((active - 1 + items.length) % items.length);
+                        } else if (e.key === "Home") {
+                          e.preventDefault();
+                          setActive(0);
+                        } else if (e.key === "End") {
+                          e.preventDefault();
+                          setActive(items.length - 1);
+                        }
+                      }}
                       className={`group relative w-full h-full flex items-center gap-3.5 sm:gap-4 lg:gap-5 p-4 sm:p-5 lg:p-7 text-left overflow-hidden transition-colors duration-500 ${
                         isActive
                           ? "bg-navy text-paper"
@@ -145,7 +175,13 @@ export function Testimonials() {
             </ul>
           </div>
 
-          <div className="relative bg-paper p-7 sm:p-10 lg:p-16 min-h-[360px] sm:min-h-[440px] lg:min-h-[540px] overflow-hidden h-full order-1 lg:order-2">
+          <div
+            role="tabpanel"
+            id={`testi-panel-${active}`}
+            aria-labelledby={`testi-tab-${active}`}
+            aria-live="polite"
+            className="relative bg-paper p-7 sm:p-10 lg:p-16 min-h-[360px] sm:min-h-[440px] lg:min-h-[540px] overflow-hidden h-full order-1 lg:order-2"
+          >
             <span
               aria-hidden
               className="absolute -top-8 sm:-top-12 lg:-top-16 -right-4 sm:-right-6 lg:-right-8 text-[180px] sm:text-[260px] lg:text-[440px] font-bold text-primary/5 leading-[0.85] select-none"
