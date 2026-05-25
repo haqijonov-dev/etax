@@ -91,6 +91,165 @@
     contain-intrinsic-size: 1px 800px;
   }
 
+  /* ===== Accessibility: view modes & font scaling ===== */
+  :root {
+    --a11y-zoom: 1;
+  }
+
+  html[data-a11y-view="grayscale"] {
+    filter: grayscale(100%);
+  }
+
+  html[data-a11y-view="contrast"] {
+    color-scheme: dark;
+    background-color: #000 !important;
+    color: #fff !important;
+  }
+
+  /* Brute-force: force every element to black/white/yellow palette regardless
+     of Tailwind utilities, hover variants, opacity modifiers, or gradients. */
+  html[data-a11y-view="contrast"] body,
+  html[data-a11y-view="contrast"] body *,
+  html[data-a11y-view="contrast"] body *::before,
+  html[data-a11y-view="contrast"] body *::after,
+  html[data-a11y-view="contrast"] body *:hover,
+  html[data-a11y-view="contrast"] body *:focus,
+  html[data-a11y-view="contrast"] body *:focus-visible {
+    background-color: transparent !important;
+    background-image: none !important;
+    color: #fff !important;
+    border-color: #ffd400 !important;
+    outline-color: #ffd400 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    text-decoration-color: #ffd400 !important;
+    backdrop-filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+  html[data-a11y-view="contrast"] body {
+    background-color: #000 !important;
+  }
+
+  /* Links: yellow, underlined for clarity */
+  html[data-a11y-view="contrast"] a,
+  html[data-a11y-view="contrast"] a *,
+  html[data-a11y-view="contrast"] a:hover,
+  html[data-a11y-view="contrast"] a:hover * {
+    color: #ffd400 !important;
+  }
+  html[data-a11y-view="contrast"] a {
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+  }
+
+  /* Only style ".btn" CTAs as bordered buttons. Native <button> elements
+     are also used as full-width accordion rows, nav toggles, etc. — giving
+     them all a 2px outline doubles up against existing dividers and looks
+     like overlapping boxes. Use hover outline as the affordance instead. */
+  html[data-a11y-view="contrast"] .btn {
+    border: 2px solid #ffd400 !important;
+  }
+  html[data-a11y-view="contrast"] button:hover,
+  html[data-a11y-view="contrast"] .btn:hover,
+  html[data-a11y-view="contrast"] a:hover {
+    outline: 2px solid #ffd400 !important;
+    outline-offset: 2px !important;
+  }
+  /* Native <button>s get a subtle underline on focus-visible so keyboard
+     users still see the active control without a heavy border. */
+  html[data-a11y-view="contrast"] button:focus-visible {
+    outline: 2px solid #ffd400 !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Primary button: filled yellow with black text */
+  html[data-a11y-view="contrast"] .btn-primary,
+  html[data-a11y-view="contrast"] .btn-primary *,
+  html[data-a11y-view="contrast"] .btn-primary:hover,
+  html[data-a11y-view="contrast"] .btn-primary:hover * {
+    background-color: #ffd400 !important;
+    color: #000 !important;
+    border-color: #ffd400 !important;
+  }
+
+  /* Icons inherit currentColor so they follow the text/link color */
+  html[data-a11y-view="contrast"] svg {
+    color: inherit !important;
+  }
+
+  /* Hr / dividers: visible yellow line */
+  html[data-a11y-view="contrast"] hr {
+    border-color: #ffd400 !important;
+  }
+
+  /* Content images stay visible (greyscale + brightness boost) */
+  html[data-a11y-view="contrast"] img {
+    filter: grayscale(100%) contrast(1.2) brightness(1.1) !important;
+    opacity: 1 !important;
+  }
+
+  /* Hide purely decorative backdrop layers so they don't wash out
+     content: bg videos, inline-style poster <div>, blurred color blobs,
+     and the huge low-alpha watermark text ("01", "✦"…) that sits BEHIND
+     real content. We require both `aria-hidden` and `absolute` so that
+     legitimate content (e.g. the Process section's step numbers, which use
+     the same opacity utilities but flow inline as block elements) is kept. */
+  html[data-a11y-view="contrast"] video,
+  html[data-a11y-view="contrast"] [aria-hidden="true"][style*="background-image"],
+  html[data-a11y-view="contrast"] [aria-hidden="true"][class*="blur-3xl"],
+  html[data-a11y-view="contrast"] [aria-hidden="true"].absolute[class*="text-navy/"],
+  html[data-a11y-view="contrast"] [aria-hidden="true"].absolute[class*="text-primary/"],
+  html[data-a11y-view="contrast"] [aria-hidden="true"].absolute[class*="text-ink/"],
+  html[data-a11y-view="contrast"] [aria-hidden="true"].grain,
+  html[data-a11y-view="contrast"] [data-a11y-hide] {
+    display: none !important;
+  }
+
+  /* Hero overlay gradients live as absolute inset-0 z-1 with inline style.
+     Their background-image is already nuked; explicitly hide their wrappers
+     so they don't sit above the section as empty boxes. */
+  html[data-a11y-view="contrast"] section [class*="absolute"][class*="inset-0"][style*="background"] {
+    display: none !important;
+  }
+
+  /* Sections that relied on background image/video for atmosphere need a
+     solid black backdrop so the white logo + white text stay readable. */
+  html[data-a11y-view="contrast"] section,
+  html[data-a11y-view="contrast"] header,
+  html[data-a11y-view="contrast"] main {
+    background-color: #000 !important;
+  }
+
+  /* Icon containers (e.g. about cards, services): give them a visible
+     yellow outline so duotone icons read clearly against pure black. */
+  html[data-a11y-view="contrast"] svg,
+  html[data-a11y-view="contrast"] svg * {
+    color: #ffd400 !important;
+    fill: currentColor !important;
+  }
+  html[data-a11y-view="contrast"] .btn-primary svg,
+  html[data-a11y-view="contrast"] .btn-primary svg * {
+    color: #000 !important;
+  }
+
+  /* Keep the a11y panel itself fully readable (it overlays the page) */
+  html[data-a11y-view="contrast"] #a11y-panel,
+  html[data-a11y-view="contrast"] #a11y-panel * {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #ffd400 !important;
+  }
+  html[data-a11y-view="contrast"] #a11y-panel button[aria-checked="true"] {
+    outline: 2px solid #ffd400 !important;
+    outline-offset: 2px;
+  }
+
+  html[data-a11y-zoom] body {
+    zoom: var(--a11y-zoom);
+  }
+
   /* Lenis */
   html.lenis,
   html.lenis body {

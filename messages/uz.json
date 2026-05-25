@@ -14,6 +14,27 @@
     },
     "cta": "Konsultatsiya"
   },
+  "a11y": {
+    "toggleLabel": "Maxsus imkoniyatlar paneli",
+    "title": "Maxsus imkoniyatlar",
+    "close": "Yopish",
+    "reset": "Standart holatga qaytarish",
+    "view": {
+      "label": "Ko'rinish",
+      "normal": "Oddiy ko'rinish",
+      "grayscale": "Rangsiz ko'rinish",
+      "contrast": "Yuqori kontrast",
+      "descNormal": "Sayt o'zining odatiy ranglarida ko'rinadi.",
+      "descGrayscale": "Sayt ranglari o'chirilib, kulrang ko'rinishga keltiriladi.",
+      "descContrast": "Qora fon, oq matn — ko'rish qiyin bo'lganlar uchun."
+    },
+    "zoom": {
+      "label": "Shrift o'lchami",
+      "value": "{pct}% ga kattalashtirish",
+      "increase": "Kattalashtirish",
+      "decrease": "Kichraytirish"
+    }
+  },
   "hero": {
     "eyebrow": "Farg'ona · Buxgalteriya va soliq xizmatlari",
     "who": "Korxonalar, MChJ va kichik bizneslar uchun",

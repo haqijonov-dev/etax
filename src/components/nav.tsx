@@ -14,6 +14,7 @@ export function Nav({ initialDark = true }: { initialDark?: boolean }) {
   const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [contrastMode, setContrastMode] = useState(false);
   const toggleRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
@@ -21,6 +22,19 @@ export function Nav({ initialDark = true }: { initialDark?: boolean }) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const sync = () =>
+      setContrastMode(root.getAttribute("data-a11y-view") === "contrast");
+    sync();
+    const observer = new MutationObserver(sync);
+    observer.observe(root, {
+      attributes: true,
+      attributeFilter: ["data-a11y-view"],
+    });
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -41,6 +55,9 @@ export function Nav({ initialDark = true }: { initialDark?: boolean }) {
   }, [open]);
 
   const onDark = initialDark && !scrolled;
+  // In contrast mode the page background is forced black, so the logo must
+  // always be the white asset regardless of scroll position.
+  const logoIsWhite = contrastMode || onDark;
 
   const headerCls = onDark
     ? "bg-navy/30 backdrop-blur-2xl backdrop-saturate-150 border-b border-paper/15 text-paper shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset]"
@@ -59,7 +76,7 @@ export function Nav({ initialDark = true }: { initialDark?: boolean }) {
             aria-label="E-tax — Buxgalteriya va soliq xizmatlari Farg'ona"
           >
             <Image
-              src={onDark ? "/white-logo.png" : "/black-logo.png"}
+              src={logoIsWhite ? "/white-logo.png" : "/black-logo.png"}
               alt=""
               width={400}
               height={120}

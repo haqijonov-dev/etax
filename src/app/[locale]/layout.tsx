@@ -10,6 +10,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { RevealObserver } from "@/components/reveal-observer";
 import { MotionProviders } from "@/components/motion-providers";
+import { A11yPanel } from "@/components/a11y-panel";
 
 function isValidLocale(value: string): value is Locale {
   return (routing.locales as readonly string[]).includes(value);
@@ -61,12 +62,12 @@ export async function generateMetadata({
     applicationName: "E-tax",
     category: "Finance",
     alternates: {
-      canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
+      canonical: pageUrl,
       languages: {
-        "uz-Latn": "/",
-        "uz-Cyrl": "/uz-cyrl",
-        ru: "/ru",
-        "x-default": "/",
+        "uz-Latn": `${baseUrl}/`,
+        "uz-Cyrl": `${baseUrl}/uz-cyrl`,
+        ru: `${baseUrl}/ru`,
+        "x-default": `${baseUrl}/`,
       },
     },
     openGraph: {
@@ -153,6 +154,7 @@ export default async function LocaleLayout({
         <SmoothScroll />
         <RevealObserver />
         {children}
+        <A11yPanel />
       </MotionProviders>
     </NextIntlClientProvider>
   );
