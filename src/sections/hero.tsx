@@ -1,23 +1,45 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export function Hero() {
   const t = useTranslations("hero");
   const marquee = t.raw("marquee") as string[];
   const ref = useRef<HTMLElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const reduced = useReducedMotion();
+  const [allowVideo, setAllowVideo] = useState(false);
+
+  useEffect(() => {
+    if (reduced) return;
+    const conn = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    if (conn?.saveData) return;
+    if (conn?.effectiveType && /(^|-)2g$/.test(conn.effectiveType)) return;
+    setAllowVideo(true);
+  }, [reduced]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const videoY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const titleY = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const videoY = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : 120]);
+  const titleY = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : -60]);
+  const titleOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.7],
+    [1, reduced ? 1 : 0],
+  );
 
   return (
     <section
@@ -31,18 +53,27 @@ export function Hero() {
         className="absolute inset-0 z-0 pointer-events-none"
         aria-hidden="true"
       >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster="/hero-poster.svg"
-          className="absolute inset-0 w-full h-full object-cover"
-          aria-hidden="true"
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
+        {allowVideo ? (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+            poster="/hero-poster.svg"
+            className="absolute inset-0 w-full h-full object-cover"
+            aria-hidden="true"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+        ) : (
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: "url(/hero-poster.svg)" }}
+          />
+        )}
       </motion.div>
 
       <div
@@ -105,7 +136,10 @@ export function Hero() {
 
       </div>
 
-      <div className="relative z-3 border-y border-paper/15 bg-navy/55 backdrop-blur-sm overflow-hidden py-3 sm:py-3.5" aria-label="Xizmatlar marquee">
+      <div
+        className="relative z-3 border-y border-paper/15 bg-navy/55 backdrop-blur-sm overflow-hidden py-3 sm:py-3.5"
+        aria-hidden="true"
+      >
         <div className="marquee-track">
           {[...marquee, ...marquee, ...marquee].map((m, i) => (
             <span

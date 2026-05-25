@@ -5,6 +5,7 @@ import { Nav } from "@/components/nav";
 import { Hero } from "@/sections/hero";
 import { Stats } from "@/sections/stats";
 import { Services } from "@/sections/services";
+import { Audit } from "@/sections/audit";
 import { About } from "@/sections/about";
 import { Process } from "@/sections/process";
 import { Testimonials } from "@/sections/testimonials";
@@ -372,15 +373,30 @@ export default async function HomePage({ params }: { params: Params }) {
   return (
     <>
       <Nav initialDark />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Hero />
         <Stats />
-        <Services />
-        <About />
-        <Process />
-        <Testimonials />
-        <Faq />
-        <Cta />
+        <div data-defer-section>
+          <Services />
+        </div>
+        <div data-defer-section>
+          <Audit />
+        </div>
+        <div data-defer-section>
+          <About />
+        </div>
+        <div data-defer-section>
+          <Process />
+        </div>
+        <div data-defer-section>
+          <Testimonials />
+        </div>
+        <div data-defer-section>
+          <Faq />
+        </div>
+        <div data-defer-section>
+          <Cta />
+        </div>
       </main>
       <Footer />
 

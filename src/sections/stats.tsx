@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 
 type Stat = { num: string; suffix: string; label: string };
 
@@ -60,13 +60,17 @@ function CountUp({
 }) {
   const ref = useRef<HTMLSpanElement | null>(null);
   const inView = useInView(ref, { once: true, amount: 0.4 });
-  const [val, setVal] = useState(0);
-
+  const reduced = useReducedMotion();
   const target = parseFloat(num);
   const isInt = Number.isInteger(target);
+  const [val, setVal] = useState(() => (reduced && !isNaN(target) ? target : 0));
 
   useEffect(() => {
     if (!inView || isNaN(target)) return;
+    if (reduced) {
+      setVal(target);
+      return;
+    }
 
     let raf = 0;
     const dur = 1500;
@@ -81,7 +85,7 @@ function CountUp({
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [inView, target, delay]);
+  }, [inView, target, delay, reduced]);
 
   const display = isNaN(target)
     ? num
@@ -96,9 +100,12 @@ function CountUp({
       animate={inView ? { opacity: 1, y: 0 } : undefined}
       transition={{ duration: 0.7, delay, ease: [0.2, 0.7, 0.2, 1] }}
       className="flex items-baseline font-semibold text-navy tracking-tight text-[56px] sm:text-[72px] lg:text-[88px] leading-[0.9]"
+      aria-label={`${isNaN(target) ? num : target}${suffix}`}
     >
-      <span>{display}</span>
-      <span className="text-[0.5em] ml-1 text-primary-deep">{suffix}</span>
+      <span aria-hidden="true">{display}</span>
+      <span aria-hidden="true" className="text-[0.5em] ml-1 text-primary-deep">
+        {suffix}
+      </span>
     </motion.span>
   );
 }
